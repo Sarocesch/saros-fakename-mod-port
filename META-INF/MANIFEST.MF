@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Specification-Title: fakename
+Specification-Vendor: Fakename
+Specification-Version: 2
+Implementation-Title: saros-fakename.port
+Implementation-Version: 1.4
+Implementation-Vendor: Fakename
+Implementation-Timestamp: 2025-11-16T00:30:34+0100
+MixinConfigs: fakename.mixins.json
+
