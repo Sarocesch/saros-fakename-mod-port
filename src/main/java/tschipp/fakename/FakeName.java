@@ -3,15 +3,14 @@ package tschipp.fakename;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
-import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.Identifier;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.server.MinecraftServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,14 +19,15 @@ public class FakeName implements ModInitializer {
     public static final String MODID = "fakename";
     public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
 
-    public static final Identifier FAKENAME_PACKET_ID = new Identifier(MODID, "fakename_sync");
-
     @Override
     public void onInitialize() {
         LOGGER.info("FakeName mod initializing...");
 
         // Load config
         Config.load();
+
+        // Register payload type for server-to-client packets
+        PayloadTypeRegistry.playS2C().register(FakeNamePayload.ID, FakeNamePayload.CODEC);
 
         // Register commands
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
@@ -39,23 +39,22 @@ public class FakeName implements ModInitializer {
             ServerPlayerEntity player = handler.player;
 
             // Send this player's fakename to everyone if they have one
-            if (player.getCommandTags().contains("fakename") ||
-                    (player.writeNbt(new NbtCompound()).contains("fakename"))) {
-                NbtCompound persistentData = getPersistentData(player);
-                if (persistentData.contains("fakename")) {
-                    sendPacket(player, persistentData.getString("fakename"), 0);
-                }
+            NbtCompound persistentData = getPersistentData(player);
+            if (persistentData.contains("fakename")) {
+                sendPacket(player, persistentData.getString("fakename").orElse(""), 0);
             }
 
             // Send all other players' fakenames to this player
             for (ServerPlayerEntity other : server.getPlayerManager().getPlayerList()) {
+                if (other == player)
+                    continue;
                 NbtCompound otherData = getPersistentData(other);
                 if (otherData.contains("fakename")) {
-                    PacketByteBuf buf = PacketByteBufs.create();
-                    buf.writeString(otherData.getString("fakename"));
-                    buf.writeInt(other.getId());
-                    buf.writeInt(0);
-                    ServerPlayNetworking.send(player, FAKENAME_PACKET_ID, buf);
+                    FakeNamePayload payload = new FakeNamePayload(
+                            otherData.getString("fakename").orElse(""),
+                            other.getId(),
+                            0);
+                    ServerPlayNetworking.send(player, payload);
                 }
             }
         });
@@ -64,39 +63,25 @@ public class FakeName implements ModInitializer {
         ServerPlayerEvents.COPY_FROM.register((oldPlayer, newPlayer, alive) -> {
             NbtCompound oldData = getPersistentData(oldPlayer);
             if (oldData.contains("fakename")) {
-                String fakename = oldData.getString("fakename");
+                String fakename = oldData.getString("fakename").orElse("");
                 getPersistentData(newPlayer).putString("fakename", fakename);
             }
         });
     }
 
     public static NbtCompound getPersistentData(PlayerEntity player) {
-        // Use the player's custom data NBT for persistence
-        NbtCompound nbt = new NbtCompound();
-        player.writeNbt(nbt);
-
-        // We need to use a dedicated storage - let's use the player's persistent data
-        // In Fabric, we can use DataAttachments or custom NBT field
-        // For simplicity, we'll access the player's NBT directly via a field
-        // Actually, Fabric doesn't have getPersistentData like Forge
-        // We need a different approach - using a static map or similar
         return FakeNameData.getData(player);
     }
 
-    public static void sendPacket(PlayerEntity player, String fakename, int operation) {
+    public static void sendPacket(ServerPlayerEntity player, String fakename, int operation) {
         performFakenameOperation(player, fakename, operation);
 
-        if (player.getWorld().isClient())
-            return;
-
-        PacketByteBuf buf = PacketByteBufs.create();
-        buf.writeString(fakename);
-        buf.writeInt(player.getId());
-        buf.writeInt(operation);
+        FakeNamePayload payload = new FakeNamePayload(fakename, player.getId(), operation);
 
         // Send to all players
-        for (ServerPlayerEntity serverPlayer : PlayerLookup.all(player.getServer())) {
-            ServerPlayNetworking.send(serverPlayer, FAKENAME_PACKET_ID, buf);
+        MinecraftServer server = player.getEntityWorld().getServer();
+        for (ServerPlayerEntity serverPlayer : PlayerLookup.all(server)) {
+            ServerPlayNetworking.send(serverPlayer, payload);
         }
     }
 

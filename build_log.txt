@@ -1,50 +1,31 @@
-To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.11/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
 Daemon will be stopped at the end of the build 
 
 > Configure project :
-Fabric Loom: 1.9.2
+Fabric Loom: 1.12.7
 
-> Task :compileJava UP-TO-DATE
+> Task :clean
+> Task :exportClasspath
+> Task :compileJava
 > Task :processResources
 > Task :classes
 > Task :jar
+> Task :processIncludeJars
+> Task :sourcesJar
+> Task :validateAccessWidener NO-SOURCE
+> Task :check
+> Task :remapJar
+> Task :remapSourcesJar
+> Task :assemble
+> Task :build
 
-> Task :compileTestJava FAILED
-T:\MyModsCode\saros-fakename.fork\1.20.1 Fabric\src\test\java\tschipp\fakename\MixinResourceTest.java:6: Fehler: Package org.junit.jupiter.api ist nicht vorhanden
-import org.junit.jupiter.api.Assertions;
-                            ^
-T:\MyModsCode\saros-fakename.fork\1.20.1 Fabric\src\test\java\tschipp\fakename\MixinResourceTest.java:7: Fehler: Package org.junit.jupiter.api ist nicht vorhanden
-import org.junit.jupiter.api.Test;
-                            ^
-T:\MyModsCode\saros-fakename.fork\1.20.1 Fabric\src\test\java\tschipp\fakename\MixinResourceTest.java:10: Fehler: Symbol nicht gefunden
-    @Test
-     ^
-  Symbol: Klasse Test
-  Ort: Klasse MixinResourceTest
-3 Fehler
-[Incubating] Problems report is available at: file:///T:/MyModsCode/saros-fakename.fork/1.20.1%20Fabric/build/reports/problems/problems-report.html
+[Incubating] Problems report is available at: file:///T:/MyModsCode/saros-fakename.fork/1.21.10%20Fabric/build/reports/problems/problems-report.html
 
-FAILURE: Build failed with an exception.
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
 
-* What went wrong:
-Execution failed for task ':compileTestJava'.
-> Compilation failed; see the compiler output below.
-  T:\MyModsCode\saros-fakename.fork\1.20.1 Fabric\src\test\java\tschipp\fakename\MixinResourceTest.java:6: Fehler: Package org.junit.jupiter.api ist nicht vorhanden
-  import org.junit.jupiter.api.Assertions;
-                              ^
-  T:\MyModsCode\saros-fakename.fork\1.20.1 Fabric\src\test\java\tschipp\fakename\MixinResourceTest.java:7: Fehler: Package org.junit.jupiter.api ist nicht vorhanden
-  import org.junit.jupiter.api.Test;
-                              ^
-  T:\MyModsCode\saros-fakename.fork\1.20.1 Fabric\src\test\java\tschipp\fakename\MixinResourceTest.java:10: Fehler: Symbol nicht gefunden
-      @Test
-       ^
-    Symbol: Klasse Test
-    Ort: Klasse MixinResourceTest
-  3 Fehler
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
 
-* Try:
-> Check your code and dependencies to fix the compilation error(s)
-> Run with --scan to get full insights.
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD FAILED in 6s
-4 actionable tasks: 3 executed, 1 up-to-date
+BUILD SUCCESSFUL in 9s
+9 actionable tasks: 9 executed

@@ -22,7 +22,7 @@ public class PlayerDisplayNameMixin {
         NbtCompound data = FakeNameData.getData(player);
 
         if (data.contains("fakename")) {
-            String fakename = data.getString("fakename");
+            String fakename = data.getString("fakename").orElse("");
             cir.setReturnValue(Text.literal(fakename));
         }
     }

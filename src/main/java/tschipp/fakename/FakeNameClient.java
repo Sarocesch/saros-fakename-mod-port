@@ -14,14 +14,15 @@ public class FakeNameClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        // Register client-side packet handler
-        ClientPlayNetworking.registerGlobalReceiver(FakeName.FAKENAME_PACKET_ID,
-                (client, handler, buf, responseSender) -> {
-                    String fakename = buf.readString();
-                    int entityId = buf.readInt();
-                    int operation = buf.readInt();
+        // Register client-side packet handler with new API
+        ClientPlayNetworking.registerGlobalReceiver(FakeNamePayload.ID,
+                (payload, context) -> {
+                    String fakename = payload.fakename();
+                    int entityId = payload.entityId();
+                    int operation = payload.operation();
 
-                    client.execute(() -> {
+                    context.client().execute(() -> {
+                        MinecraftClient client = context.client();
                         if (client.world == null)
                             return;
 
@@ -37,7 +38,7 @@ public class FakeNameClient implements ClientModInitializer {
                                 if (operation == 0) {
                                     playerInfo.setDisplayName(Text.literal(fakename));
                                 } else {
-                                    playerInfo.setDisplayName(Text.literal(toSync.getGameProfile().getName()));
+                                    playerInfo.setDisplayName(Text.literal(toSync.getGameProfile().name()));
                                 }
                             }
                         }

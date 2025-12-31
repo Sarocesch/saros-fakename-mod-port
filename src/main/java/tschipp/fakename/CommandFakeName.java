@@ -1,16 +1,12 @@
 package tschipp.fakename;
 
 import com.mojang.brigadier.CommandDispatcher;
-import com.mojang.brigadier.StringReader;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 
-import net.minecraft.command.CommandSource;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.command.CommandManager;
@@ -75,7 +71,7 @@ public class CommandFakeName {
         for (ServerPlayerEntity player : source.getServer().getPlayerManager().getPlayerList()) {
             NbtCompound data = FakeNameData.getData(player);
             if (data.contains("fakename")) {
-                String name = Formatting.strip(data.getString("fakename"));
+                String name = Formatting.strip(data.getString("fakename").orElse(""));
                 if (name != null) {
                     name = name.contains(" ") ? ('"' + name + '"') : name;
                     builder.suggest(name);
@@ -119,9 +115,9 @@ public class CommandFakeName {
         for (ServerPlayerEntity player : source.getServer().getPlayerManager().getPlayerList()) {
             NbtCompound data = FakeNameData.getData(player);
             if (data.contains("fakename")) {
-                String fn = Formatting.strip(data.getString("fakename"));
+                String fn = Formatting.strip(data.getString("fakename").orElse(""));
                 if (fn != null && fn.equalsIgnoreCase(string)) {
-                    source.sendMessage(Text.literal(copy + "'s real name is " + player.getGameProfile().getName()));
+                    source.sendMessage(Text.literal(copy + "'s real name is " + player.getGameProfile().name()));
                     found = true;
                 }
             }
