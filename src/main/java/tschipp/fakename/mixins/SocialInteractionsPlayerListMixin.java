@@ -10,41 +10,57 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.social.PlayerEntry;
-import net.minecraft.client.gui.screens.social.SocialInteractionsPlayerList;
-import net.minecraft.client.gui.screens.social.SocialInteractionsScreen;
-import net.minecraft.client.multiplayer.PlayerInfo;
-import net.minecraft.network.chat.Component;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.screen.multiplayer.SocialInteractionsPlayerListEntry;
+import net.minecraft.client.gui.screen.multiplayer.SocialInteractionsPlayerListWidget;
+import net.minecraft.client.gui.screen.multiplayer.SocialInteractionsScreen;
+import net.minecraft.client.network.PlayerListEntry;
+import net.minecraft.text.Text;
 
-@Mixin(SocialInteractionsPlayerList.class)
+/**
+ * Mixin to update the social interactions screen to show fake names.
+ */
+@Mixin(SocialInteractionsPlayerListWidget.class)
 public class SocialInteractionsPlayerListMixin {
 
 	@Shadow
-	private List<PlayerEntry> players;
-	
-	@Shadow
-	private SocialInteractionsScreen socialInteractionsScreen;
+	private List<SocialInteractionsPlayerListEntry> players;
 
-	
-	@Inject(method = "updateFiltersAndScroll(Ljava/util/Collection;D)V", at = @At(value = "INVOKE", target = "net/minecraft/client/gui/screens/social/SocialInteractionsPlayerList.updateFilteredPlayers()V"))
-	private void onUpdatePlayerList(Collection<UUID> uuids, double d, CallbackInfo callback) 
-	{
-		for(int i = 0; i < players.size(); i++)
-		{
-			PlayerEntry en = players.get(i);
-	        @SuppressWarnings("resource")
-			PlayerInfo playerinfo = Minecraft.getInstance().player.connection.getPlayerInfo(en.getPlayerId());
-			if(playerinfo != null)
-			{
-				Component dispName = playerinfo.getTabListDisplayName();
-				if(dispName != null && !en.getPlayerName().equals(dispName.getString()))
-				{
-					players.set(i, new PlayerEntry(Minecraft.getInstance(), this.socialInteractionsScreen, playerinfo.getProfile().getId(), dispName.getString(), playerinfo::getSkinLocation, true));
+	@Shadow
+	private SocialInteractionsScreen parent;
+
+	@Inject(method = "setPlayers", at = @At("TAIL"))
+	private void onUpdatePlayerList(Collection<UUID> uuids, double scrollAmount, CallbackInfo ci) {
+		MinecraftClient client = MinecraftClient.getInstance();
+		if (client.player == null || client.player.networkHandler == null)
+			return;
+
+		for (int i = 0; i < players.size(); i++) {
+			SocialInteractionsPlayerListEntry entry = players.get(i);
+
+			// Try to find if this entry has a fakename by checking the tab list
+			for (UUID uuid : uuids) {
+				PlayerListEntry playerInfo = client.player.networkHandler.getPlayerListEntry(uuid);
+				if (playerInfo != null) {
+					Text displayName = playerInfo.getDisplayName();
+					if (displayName != null) {
+						String displayString = displayName.getString();
+						// Check if entry name matches the profile name but display is different
+						String profileName = playerInfo.getProfile().getName();
+						if (entry.getName().equals(profileName) && !profileName.equals(displayString)) {
+							// Replace entry with one showing the fake name
+							players.set(i, new SocialInteractionsPlayerListEntry(
+									client,
+									this.parent,
+									uuid,
+									displayString,
+									playerInfo::getSkinTexture,
+									true));
+							break;
+						}
+					}
 				}
 			}
 		}
-
 	}
-
 }

@@ -1,109 +1,112 @@
 package tschipp.fakename;
 
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
+import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.PacketByteBuf;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.Identifier;
+import net.minecraft.entity.player.PlayerEntity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import net.minecraft.commands.synchronization.ArgumentTypeInfo;
-import net.minecraft.commands.synchronization.ArgumentTypeInfos;
-import net.minecraft.commands.synchronization.SingletonArgumentInfo;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.forgespi.language.IModInfo;
-import net.minecraftforge.network.NetworkRegistry;
-import net.minecraftforge.network.PacketDistributor;
-import net.minecraftforge.network.simple.SimpleChannel;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-import tschipp.fakename.CommandFakeName.FakenameArgumentType;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+public class FakeName implements ModInitializer {
 
-@EventBusSubscriber(bus = Bus.MOD)
-@Mod(FakeName.MODID)
-public class FakeName
-{
     public static final String MODID = "fakename";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
 
-    public static SimpleChannel network;
+    public static final Identifier FAKENAME_PACKET_ID = new Identifier(MODID, "fakename_sync");
 
-    public static IModInfo info;
+    @Override
+    public void onInitialize() {
+        LOGGER.info("FakeName mod initializing...");
 
-    private static final DeferredRegister<ArgumentTypeInfo<?, ?>> COMMAND_ARGUMENT_TYPES = DeferredRegister.create(ForgeRegistries.COMMAND_ARGUMENT_TYPES, MODID);
-    private static final RegistryObject<SingletonArgumentInfo<FakenameArgumentType>> FAKENAME_ARGUMENT = COMMAND_ARGUMENT_TYPES.register("fakename", () -> {
-        return ArgumentTypeInfos.registerByClass(FakenameArgumentType.class, SingletonArgumentInfo.contextFree(FakenameArgumentType::fakename));
-    });
-    
-    
-    
-    public FakeName()
-    {
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        // Load config
+        Config.load();
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.SERVER_SPEC);
-
-        info = ModLoadingContext.get().getActiveContainer().getModInfo();
-        
-        COMMAND_ARGUMENT_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
-
-        Logger logger = LogManager.getLogger(MODID);
-        InputStream in = FakeName.class.getClassLoader().getResourceAsStream("fakename.mixins.json");
-        if (in == null) {
-            logger.error("fakename.mixins.json not found on classpath");
-        } else {
-            try {
-                byte[] data = in.readAllBytes();
-                String s = new String(data, StandardCharsets.UTF_8);
-                if (!s.trim().startsWith("{")) {
-                    logger.error("fakename.mixins.json is not valid JSON content");
-                } else {
-                    logger.info("fakename.mixins.json loaded ({} bytes)", data.length);
-                }
-            } catch (Exception e) {
-                logger.error("Failed to read fakename.mixins.json", e);
-            }
-        }
-    }
-
-    private void setup(final FMLCommonSetupEvent event)
-    {
-        event.enqueueWork(() -> {
-        	 FakeName.network = NetworkRegistry.newSimpleChannel(new ResourceLocation(FakeName.MODID, "fakenamechannel"), () -> FakeName.info.getVersion().toString(), s -> true, s -> true);
-             FakeName.network.registerMessage(0, FakeNamePacket.class, FakeNamePacket::toBytes, FakeNamePacket::new, FakeNamePacket::handle);        
+        // Register commands
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
+            CommandFakeName.register(dispatcher);
         });
-       
+
+        // Player join event - sync fakenames to joining player
+        ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
+            ServerPlayerEntity player = handler.player;
+
+            // Send this player's fakename to everyone if they have one
+            if (player.getCommandTags().contains("fakename") ||
+                    (player.writeNbt(new NbtCompound()).contains("fakename"))) {
+                NbtCompound persistentData = getPersistentData(player);
+                if (persistentData.contains("fakename")) {
+                    sendPacket(player, persistentData.getString("fakename"), 0);
+                }
+            }
+
+            // Send all other players' fakenames to this player
+            for (ServerPlayerEntity other : server.getPlayerManager().getPlayerList()) {
+                NbtCompound otherData = getPersistentData(other);
+                if (otherData.contains("fakename")) {
+                    PacketByteBuf buf = PacketByteBufs.create();
+                    buf.writeString(otherData.getString("fakename"));
+                    buf.writeInt(other.getId());
+                    buf.writeInt(0);
+                    ServerPlayNetworking.send(player, FAKENAME_PACKET_ID, buf);
+                }
+            }
+        });
+
+        // Player death/respawn - copy fakename data
+        ServerPlayerEvents.COPY_FROM.register((oldPlayer, newPlayer, alive) -> {
+            NbtCompound oldData = getPersistentData(oldPlayer);
+            if (oldData.contains("fakename")) {
+                String fakename = oldData.getString("fakename");
+                getPersistentData(newPlayer).putString("fakename", fakename);
+            }
+        });
     }
 
-    public static void sendPacket(Player player, String fakename, int operation)
-    {
+    public static NbtCompound getPersistentData(PlayerEntity player) {
+        // Use the player's custom data NBT for persistence
+        NbtCompound nbt = new NbtCompound();
+        player.writeNbt(nbt);
+
+        // We need to use a dedicated storage - let's use the player's persistent data
+        // In Fabric, we can use DataAttachments or custom NBT field
+        // For simplicity, we'll access the player's NBT directly via a field
+        // Actually, Fabric doesn't have getPersistentData like Forge
+        // We need a different approach - using a static map or similar
+        return FakeNameData.getData(player);
+    }
+
+    public static void sendPacket(PlayerEntity player, String fakename, int operation) {
         performFakenameOperation(player, fakename, operation);
-        FakeName.network.send(PacketDistributor.ALL.noArg(), new FakeNamePacket(fakename, player.getId(), operation));
+
+        if (player.getWorld().isClient())
+            return;
+
+        PacketByteBuf buf = PacketByteBufs.create();
+        buf.writeString(fakename);
+        buf.writeInt(player.getId());
+        buf.writeInt(operation);
+
+        // Send to all players
+        for (ServerPlayerEntity serverPlayer : PlayerLookup.all(player.getServer())) {
+            ServerPlayNetworking.send(serverPlayer, FAKENAME_PACKET_ID, buf);
+        }
     }
 
-    public static void performFakenameOperation(Player player, String fakename, int operation)
-    {
-        CompoundTag tag = player.getPersistentData();
+    public static void performFakenameOperation(PlayerEntity player, String fakename, int operation) {
+        NbtCompound tag = getPersistentData(player);
 
-        if (operation == 0)
-        {
+        if (operation == 0) {
             tag.putString("fakename", fakename);
-            player.refreshDisplayName();
-        }
-         else
-         {
+        } else {
             tag.remove("fakename");
-            player.refreshDisplayName();
         }
     }
-
-
-
 }

@@ -1,0 +1,47 @@
+package tschipp.fakename;
+
+import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.PlayerListEntry;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.text.Text;
+
+@Environment(EnvType.CLIENT)
+public class FakeNameClient implements ClientModInitializer {
+
+    @Override
+    public void onInitializeClient() {
+        // Register client-side packet handler
+        ClientPlayNetworking.registerGlobalReceiver(FakeName.FAKENAME_PACKET_ID,
+                (client, handler, buf, responseSender) -> {
+                    String fakename = buf.readString();
+                    int entityId = buf.readInt();
+                    int operation = buf.readInt();
+
+                    client.execute(() -> {
+                        if (client.world == null)
+                            return;
+
+                        PlayerEntity toSync = (PlayerEntity) client.world.getEntityById(entityId);
+
+                        if (toSync != null) {
+                            FakeName.performFakenameOperation(toSync, fakename, operation);
+
+                            // Update tab list
+                            PlayerListEntry playerInfo = client.player.networkHandler
+                                    .getPlayerListEntry(toSync.getUuid());
+                            if (playerInfo != null) {
+                                if (operation == 0) {
+                                    playerInfo.setDisplayName(Text.literal(fakename));
+                                } else {
+                                    playerInfo.setDisplayName(Text.literal(toSync.getGameProfile().getName()));
+                                }
+                            }
+                        }
+                    });
+                });
+    }
+}
