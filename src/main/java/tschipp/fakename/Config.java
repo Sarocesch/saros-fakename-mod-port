@@ -3,17 +3,17 @@ package tschipp.fakename;
 
 import org.apache.commons.lang3.tuple.Pair;
 
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.ForgeConfigSpec.IntValue;
+import net.neoforged.neoforge.common.ModConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec.IntValue;
 
 public class Config
 {
 	public static final ServerConfig SERVER;
-	public static final ForgeConfigSpec SERVER_SPEC;
+	public static final ModConfigSpec SERVER_SPEC;
 
 	static
 	{
-		final Pair<ServerConfig, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(ServerConfig::new);
+		final Pair<ServerConfig, ModConfigSpec> specPair = new ModConfigSpec.Builder().configure(ServerConfig::new);
 		SERVER_SPEC = specPair.getRight();
 		SERVER = specPair.getLeft();
 	}
@@ -24,7 +24,7 @@ public class Config
 		
 		public final IntValue commandPermissionLevelAll;
 		
-		public ServerConfig(ForgeConfigSpec.Builder builder)
+		public ServerConfig(ModConfigSpec.Builder builder)
 		{
 			builder.push("settings");
 			commandPermissionLevelAll = builder

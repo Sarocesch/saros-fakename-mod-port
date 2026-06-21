@@ -1,109 +1,51 @@
 package tschipp.fakename;
 
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-
-import net.minecraft.commands.synchronization.ArgumentTypeInfo;
-import net.minecraft.commands.synchronization.ArgumentTypeInfos;
-import net.minecraft.commands.synchronization.SingletonArgumentInfo;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.forgespi.language.IModInfo;
-import net.minecraftforge.network.NetworkRegistry;
-import net.minecraftforge.network.PacketDistributor;
-import net.minecraftforge.network.simple.SimpleChannel;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-import tschipp.fakename.CommandFakeName.FakenameArgumentType;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import net.neoforged.neoforge.network.handling.IPayloadContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@EventBusSubscriber(bus = Bus.MOD)
 @Mod(FakeName.MODID)
-public class FakeName
-{
+public class FakeName {
     public static final String MODID = "fakename";
+    public static final Logger LOGGER = LogManager.getLogger(MODID);
 
-    public static SimpleChannel network;
+    public FakeName(ModContainer modContainer) {
+        modContainer.registerConfig(ModConfig.Type.SERVER, Config.SERVER_SPEC);
 
-    public static IModInfo info;
-
-    private static final DeferredRegister<ArgumentTypeInfo<?, ?>> COMMAND_ARGUMENT_TYPES = DeferredRegister.create(ForgeRegistries.COMMAND_ARGUMENT_TYPES, MODID);
-    private static final RegistryObject<SingletonArgumentInfo<FakenameArgumentType>> FAKENAME_ARGUMENT = COMMAND_ARGUMENT_TYPES.register("fakename", () -> {
-        return ArgumentTypeInfos.registerByClass(FakenameArgumentType.class, SingletonArgumentInfo.contextFree(FakenameArgumentType::fakename));
-    });
-    
-    
-    
-    public FakeName()
-    {
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.SERVER_SPEC);
-
-        info = ModLoadingContext.get().getActiveContainer().getModInfo();
-        
-        COMMAND_ARGUMENT_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
-
-        Logger logger = LogManager.getLogger(MODID);
-        InputStream in = FakeName.class.getClassLoader().getResourceAsStream("fakename.mixins.json");
-        if (in == null) {
-            logger.error("fakename.mixins.json not found on classpath");
-        } else {
-            try {
-                byte[] data = in.readAllBytes();
-                String s = new String(data, StandardCharsets.UTF_8);
-                if (!s.trim().startsWith("{")) {
-                    logger.error("fakename.mixins.json is not valid JSON content");
-                } else {
-                    logger.info("fakename.mixins.json loaded ({} bytes)", data.length);
-                }
-            } catch (Exception e) {
-                logger.error("Failed to read fakename.mixins.json", e);
-            }
-        }
+        IEventBus modBus = modContainer.getEventBus();
+        modBus.addListener(this::onRegisterPayloads);
     }
 
-    private void setup(final FMLCommonSetupEvent event)
-    {
-        event.enqueueWork(() -> {
-        	 FakeName.network = NetworkRegistry.newSimpleChannel(new ResourceLocation(FakeName.MODID, "fakenamechannel"), () -> FakeName.info.getVersion().toString(), s -> true, s -> true);
-             FakeName.network.registerMessage(0, FakeNamePacket.class, FakeNamePacket::toBytes, FakeNamePacket::new, FakeNamePacket::handle);        
-        });
-       
+    private void onRegisterPayloads(RegisterPayloadHandlersEvent event) {
+        var registrar = event.registrar("1");
+        registrar.playToClient(FakeNamePacket.TYPE, FakeNamePacket.STREAM_CODEC, FakeNamePacket::handleClient);
     }
 
-    public static void sendPacket(Player player, String fakename, int operation)
-    {
+    public static void sendPacket(Player player, String fakename, int operation) {
         performFakenameOperation(player, fakename, operation);
-        FakeName.network.send(PacketDistributor.ALL.noArg(), new FakeNamePacket(fakename, player.getId(), operation));
+        PacketDistributor.sendToAllPlayers(new FakeNamePacket(fakename, player.getId(), operation));
     }
 
-    public static void performFakenameOperation(Player player, String fakename, int operation)
-    {
+    public static void performFakenameOperation(Player player, String fakename, int operation) {
         CompoundTag tag = player.getPersistentData();
-
-        if (operation == 0)
-        {
+        if (operation == 0) {
             tag.putString("fakename", fakename);
             player.refreshDisplayName();
-        }
-         else
-         {
+        } else {
             tag.remove("fakename");
             player.refreshDisplayName();
         }
     }
-
-
-
 }
