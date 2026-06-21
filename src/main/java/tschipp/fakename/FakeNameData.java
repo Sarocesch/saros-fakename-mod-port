@@ -1,7 +1,7 @@
 package tschipp.fakename;
 
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.NbtCompound;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.nbt.CompoundTag;
 
 import java.util.Map;
 import java.util.UUID;
@@ -13,17 +13,17 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class FakeNameData {
 
-    private static final Map<UUID, NbtCompound> PLAYER_DATA = new ConcurrentHashMap<>();
+    private static final Map<UUID, CompoundTag> PLAYER_DATA = new ConcurrentHashMap<>();
 
-    public static NbtCompound getData(PlayerEntity player) {
-        return PLAYER_DATA.computeIfAbsent(player.getUuid(), k -> new NbtCompound());
+    public static CompoundTag getData(Player player) {
+        return PLAYER_DATA.computeIfAbsent(player.getUUID(), k -> new CompoundTag());
     }
 
-    public static void clearData(PlayerEntity player) {
-        PLAYER_DATA.remove(player.getUuid());
+    public static void clearData(Player player) {
+        PLAYER_DATA.remove(player.getUUID());
     }
 
-    public static void setData(PlayerEntity player, NbtCompound data) {
-        PLAYER_DATA.put(player.getUuid(), data);
+    public static void setData(Player player, CompoundTag data) {
+        PLAYER_DATA.put(player.getUUID(), data);
     }
 }
