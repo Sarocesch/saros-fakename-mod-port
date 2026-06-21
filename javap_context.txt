@@ -1,0 +1,9 @@
+Compiled from "FMLJavaModLoadingContext.java"
+public class net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext extends net.minecraftforge.fml.ModLoadingContext {
+  private final net.minecraftforge.fml.javafmlmod.FMLModContainer container;
+  net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext(net.minecraftforge.fml.javafmlmod.FMLModContainer);
+  public net.minecraftforge.eventbus.api.bus.BusGroup getModBusGroup();
+  public net.minecraftforge.fml.javafmlmod.FMLModContainer getContainer();
+  public static net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext get();
+  public net.minecraftforge.fml.ModContainer getContainer();
+}
