@@ -1,0 +1,234 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Fakename - Client",
+      "presentation": {
+        "group": "NG - fakename",
+        "order": 0
+      },
+      "projectName": "fakename-1.21.10 NeoForge",
+      "mainClass": "net.neoforged.fml.startup.Client",
+      "args": [
+        "--version",
+        "21.10.64",
+        "--assetIndex",
+        "asset-index",
+        "--assetsDir",
+        "C:\\Users\\saroc\\.gradle\\caches\\minecraft\\assets",
+        "--fml.mcVersion",
+        "1.21.10",
+        "--fml.neoForgeVersion",
+        "21.10.64",
+        "--fml.neoFormVersion",
+        "20251010.172816"
+      ],
+      "vmArgs": [
+        "--add-opens",
+        "java.base/java.lang.invoke\u003dALL-UNNAMED",
+        "--add-exports",
+        "jdk.naming.dns/com.sun.jndi.dns\u003djava.naming",
+        "-XX:HeapDumpPath\u003dMojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump",
+        "-Dforge.logging.markers\u003dREGISTRIES",
+        "-Dforge.logging.console.level\u003ddebug",
+        "-Dneoforge.enabledGameTestNamespaces\u003dfakename",
+        "-Dneoforge.enableGameTest\u003dtrue",
+        "-Djava.net.preferIPv6Addresses\u003dsystem"
+      ],
+      "cwd": "${workspaceFolder}\\runs\\client",
+      "env": {
+        "MOD_CLASSES": "fakename%%T:\\MyModsCode\\saros-fakename.fork\\1.21.10 NeoForge\\bin\\main"
+      },
+      "shortenCommandLine": "argfile"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Fakename - ClientData",
+      "presentation": {
+        "group": "NG - fakename",
+        "order": 1
+      },
+      "projectName": "fakename-1.21.10 NeoForge",
+      "mainClass": "net.neoforged.fml.startup.DataClient",
+      "args": [
+        "--mod",
+        "fakename",
+        "--all",
+        "--output",
+        "T:\\MyModsCode\\saros-fakename.fork\\1.21.10 NeoForge\\src\\generated\\resources",
+        "--existing",
+        "T:\\MyModsCode\\saros-fakename.fork\\1.21.10 NeoForge\\src\\main\\resources",
+        "--assetIndex",
+        "asset-index",
+        "--assetsDir",
+        "C:\\Users\\saroc\\.gradle\\caches\\minecraft\\assets",
+        "--fml.mcVersion",
+        "1.21.10",
+        "--fml.neoForgeVersion",
+        "21.10.64",
+        "--fml.neoFormVersion",
+        "20251010.172816"
+      ],
+      "vmArgs": [
+        "--add-opens",
+        "java.base/java.lang.invoke\u003dALL-UNNAMED",
+        "--add-exports",
+        "jdk.naming.dns/com.sun.jndi.dns\u003djava.naming",
+        "-XX:HeapDumpPath\u003dMojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump",
+        "-Dforge.logging.markers\u003dREGISTRIES",
+        "-Dforge.logging.console.level\u003ddebug",
+        "-Djava.net.preferIPv6Addresses\u003dsystem"
+      ],
+      "cwd": "${workspaceFolder}\\runs\\clientData",
+      "env": {
+        "MOD_CLASSES": "fakename%%T:\\MyModsCode\\saros-fakename.fork\\1.21.10 NeoForge\\bin\\main"
+      },
+      "shortenCommandLine": "argfile"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Fakename - GameTestServer",
+      "presentation": {
+        "group": "NG - fakename",
+        "order": 2
+      },
+      "projectName": "fakename-1.21.10 NeoForge",
+      "mainClass": "net.neoforged.fml.startup.GameTestServer",
+      "args": [
+        "--fml.mcVersion",
+        "1.21.10",
+        "--fml.neoForgeVersion",
+        "21.10.64",
+        "--fml.neoFormVersion",
+        "20251010.172816"
+      ],
+      "vmArgs": [
+        "--add-opens",
+        "java.base/java.lang.invoke\u003dALL-UNNAMED",
+        "--add-exports",
+        "jdk.naming.dns/com.sun.jndi.dns\u003djava.naming",
+        "-Dforge.logging.markers\u003dREGISTRIES",
+        "-Dforge.logging.console.level\u003ddebug",
+        "-Dneoforge.enableGameTest\u003dtrue",
+        "-Djava.net.preferIPv6Addresses\u003dsystem"
+      ],
+      "cwd": "${workspaceFolder}\\runs\\gameTestServer",
+      "env": {
+        "MOD_CLASSES": "fakename%%T:\\MyModsCode\\saros-fakename.fork\\1.21.10 NeoForge\\bin\\main"
+      },
+      "shortenCommandLine": "argfile"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Fakename - Junit",
+      "presentation": {
+        "group": "NG - fakename",
+        "order": 3
+      },
+      "projectName": "fakename-1.21.10 NeoForge",
+      "mainClass": "NONE",
+      "args": [
+        "--version",
+        "21.10.64",
+        "--assetIndex",
+        "asset-index",
+        "--assetsDir",
+        "C:\\Users\\saroc\\.gradle\\caches\\minecraft\\assets",
+        "--fml.mcVersion",
+        "1.21.10",
+        "--fml.neoForgeVersion",
+        "21.10.64",
+        "--fml.neoFormVersion",
+        "20251010.172816"
+      ],
+      "vmArgs": [
+        "--add-opens",
+        "java.base/java.lang.invoke\u003dALL-UNNAMED",
+        "--add-exports",
+        "jdk.naming.dns/com.sun.jndi.dns\u003djava.naming",
+        "-XX:HeapDumpPath\u003dMojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump",
+        "-Dforge.logging.markers\u003dREGISTRIES",
+        "-Dforge.logging.console.level\u003ddebug",
+        "-Djava.net.preferIPv6Addresses\u003dsystem"
+      ],
+      "cwd": "${workspaceFolder}\\runs\\junit",
+      "env": {
+        "MOD_CLASSES": "fakename%%T:\\MyModsCode\\saros-fakename.fork\\1.21.10 NeoForge\\bin\\main"
+      },
+      "shortenCommandLine": "argfile"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Fakename - Server",
+      "presentation": {
+        "group": "NG - fakename",
+        "order": 4
+      },
+      "projectName": "fakename-1.21.10 NeoForge",
+      "mainClass": "net.neoforged.fml.startup.Server",
+      "args": [
+        "--nogui",
+        "--fml.mcVersion",
+        "1.21.10",
+        "--fml.neoForgeVersion",
+        "21.10.64",
+        "--fml.neoFormVersion",
+        "20251010.172816"
+      ],
+      "vmArgs": [
+        "--add-opens",
+        "java.base/java.lang.invoke\u003dALL-UNNAMED",
+        "--add-exports",
+        "jdk.naming.dns/com.sun.jndi.dns\u003djava.naming",
+        "-Dforge.logging.markers\u003dREGISTRIES",
+        "-Dforge.logging.console.level\u003ddebug",
+        "-Dneoforge.enabledGameTestNamespaces\u003dfakename",
+        "-Djava.net.preferIPv6Addresses\u003dsystem"
+      ],
+      "cwd": "${workspaceFolder}\\runs\\server",
+      "env": {
+        "MOD_CLASSES": "fakename%%T:\\MyModsCode\\saros-fakename.fork\\1.21.10 NeoForge\\bin\\main"
+      },
+      "shortenCommandLine": "argfile"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Fakename - ServerData",
+      "presentation": {
+        "group": "NG - fakename",
+        "order": 5
+      },
+      "projectName": "fakename-1.21.10 NeoForge",
+      "mainClass": "net.neoforged.fml.startup.DataServer",
+      "args": [
+        "--fml.mcVersion",
+        "1.21.10",
+        "--fml.neoForgeVersion",
+        "21.10.64",
+        "--fml.neoFormVersion",
+        "20251010.172816"
+      ],
+      "vmArgs": [
+        "--add-opens",
+        "java.base/java.lang.invoke\u003dALL-UNNAMED",
+        "--add-exports",
+        "jdk.naming.dns/com.sun.jndi.dns\u003djava.naming",
+        "-Dforge.logging.markers\u003dREGISTRIES",
+        "-Dforge.logging.console.level\u003ddebug",
+        "-Djava.net.preferIPv6Addresses\u003dsystem"
+      ],
+      "cwd": "${workspaceFolder}\\runs\\serverData",
+      "env": {
+        "MOD_CLASSES": "fakename%%T:\\MyModsCode\\saros-fakename.fork\\1.21.10 NeoForge\\bin\\main"
+      },
+      "shortenCommandLine": "argfile"
+    }
+  ]
+}

@@ -3,6 +3,7 @@ package tschipp.fakename.mixins;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
+import com.mojang.authlib.GameProfile;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -22,25 +23,21 @@ public class SocialInteractionsPlayerListMixin {
 
 	@Shadow
 	private List<PlayerEntry> players;
-	
+
 	@Shadow
 	private SocialInteractionsScreen socialInteractionsScreen;
 
-	
 	@Inject(method = "updateFiltersAndScroll(Ljava/util/Collection;D)V", at = @At(value = "INVOKE", target = "net/minecraft/client/gui/screens/social/SocialInteractionsPlayerList.updateFilteredPlayers()V"))
-	private void onUpdatePlayerList(Collection<UUID> uuids, double d, CallbackInfo callback) 
-	{
-		for(int i = 0; i < players.size(); i++)
-		{
+	private void onUpdatePlayerList(Collection<UUID> uuids, double d, CallbackInfo callback) {
+		for (int i = 0; i < players.size(); i++) {
 			PlayerEntry en = players.get(i);
-	        @SuppressWarnings("resource")
+			@SuppressWarnings("resource")
 			PlayerInfo playerinfo = Minecraft.getInstance().player.connection.getPlayerInfo(en.getPlayerId());
-			if(playerinfo != null)
-			{
+			if (playerinfo != null) {
 				Component dispName = playerinfo.getTabListDisplayName();
-				if(dispName != null && !en.getPlayerName().equals(dispName.getString()))
-				{
-					players.set(i, new PlayerEntry(Minecraft.getInstance(), this.socialInteractionsScreen, playerinfo.getProfile().getId(), dispName.getString(), playerinfo::getSkinLocation, true));
+				if (dispName != null && !en.getPlayerName().equals(dispName.getString())) {
+					players.set(i, new PlayerEntry(Minecraft.getInstance(), this.socialInteractionsScreen,
+							playerinfo.getProfile().id(), dispName.getString(), playerinfo::getSkin, true));
 				}
 			}
 		}

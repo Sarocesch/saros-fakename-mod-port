@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "LGPL-3.0-or-later"
+
+[[mods]]
+modId = "fakename"
+version = "${file.jarVersion}"
+displayName = "Fakename"
+logoFile = "logo.png"
+authors = "Tschipp, ezTxmMC, Sarocesch"
+description = "Fakename adds a way to change the name of players."
+
+[[mixins]]
+config = "fakename.mixins.json"
+
+[[dependencies.fakename]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.10,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.fakename]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.10,1.22)"
+ordering = "NONE"
+side = "BOTH"

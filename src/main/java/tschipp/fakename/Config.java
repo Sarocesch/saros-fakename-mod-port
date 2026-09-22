@@ -1,38 +1,32 @@
 package tschipp.fakename;
 
-
 import org.apache.commons.lang3.tuple.Pair;
+import net.neoforged.neoforge.common.ModConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec.IntValue;
 
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.ForgeConfigSpec.IntValue;
-
-public class Config
-{
+public class Config {
 	public static final ServerConfig SERVER;
-	public static final ForgeConfigSpec SERVER_SPEC;
+	public static final ModConfigSpec SERVER_SPEC;
 
-	static
-	{
-		final Pair<ServerConfig, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(ServerConfig::new);
+	static {
+		final Pair<ServerConfig, ModConfigSpec> specPair = new ModConfigSpec.Builder().configure(ServerConfig::new);
 		SERVER_SPEC = specPair.getRight();
 		SERVER = specPair.getLeft();
 	}
 
-	public static class ServerConfig
-	{	
+	public static class ServerConfig {
 		public final IntValue commandPermissionLevelSelf;
-		
 		public final IntValue commandPermissionLevelAll;
-		
-		public ServerConfig(ForgeConfigSpec.Builder builder)
-		{
+
+		public ServerConfig(ModConfigSpec.Builder builder) {
 			builder.push("settings");
 			commandPermissionLevelAll = builder
-					.comment("Permission Level of the command. This is the level needed to be able to change other people's fakename")
+					.comment(
+							"Permission Level of the command. This is the level needed to change other people's fakename")
 					.defineInRange("commandPermissionLevelAll", 2, 0, 10);
-			
+
 			commandPermissionLevelSelf = builder
-					.comment("Permission Level of the command. This is the level needed to be able to change your own fakename")
+					.comment("Permission Level of the command. This is the level needed to change your own fakename")
 					.defineInRange("commandPermissionLevelSelf", 0, 0, 10);
 			builder.pop();
 		}
