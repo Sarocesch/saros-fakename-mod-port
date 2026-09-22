@@ -1,0 +1,109 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.8/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :
+MixinGradle did not locate the diffplug APT plugin, skipping eclipse task configuration
+
+> Task :downloadMcpConfig
+> Task :extractSrg UP-TO-DATE
+> Task :createMcpToSrg UP-TO-DATE
+
+> Task :compileJava FAILED
+Hinweis: SpongePowered MIXIN Annotation Processor Version=0.8.5 (MixinGradle Version=0.7.38)
+Hinweis: Supported obfuscation types: ObfuscationServiceMCP supports [notch] ObfuscationServiceFG3 supports [searge]
+Hinweis: Loading searge mappings from T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\build\createMcpToSrg\output.tsrg
+Hinweis: Writing refmap to T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\build\tmp\compileJava\compileJava-refmap.json
+Hinweis: Writing refmap to T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\build\tmp\compileJava\compileJava-refmap.json
+Hinweis: Writing searge composite mappings to T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\build\tmp\compileJava\compileJava-mappings.tsrg
+Hinweis: Writing refmap to T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\build\tmp\compileJava\compileJava-refmap.json
+Hinweis: Writing refmap to T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\build\tmp\compileJava\compileJava-refmap.json
+Hinweis: Writing searge composite mappings to T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\build\tmp\compileJava\compileJava-mappings.tsrg
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\CommandFakeName.java:126: Fehler: Inkompatible Typen: Optional<String> kann nicht in String konvertiert werden
+            	String fn = ChatFormatting.stripFormatting(player.getPersistentData().getString("fakename"));
+            	                                                                               ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\CommandFakeName.java:129: Fehler: Symbol nicht gefunden
+                    source.sendSystemMessage(Component.literal(copy + "'s real name is " + player.getGameProfile().getName()));
+                                                                                                                  ^
+  Symbol: Methode getName()
+  Ort: Klasse GameProfile
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\CommandFakeName.java:162: Fehler: Inkompatible Typen: Optional<String> kann nicht in String konvertiert werden
+                    	String name = ChatFormatting.stripFormatting(player.getPersistentData().getString("fakename"));
+                    	                                                                                 ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeName.java:51: Fehler: Symbol nicht gefunden
+        BusGroup modEventBus = context.getModEventBus();
+                                      ^
+  Symbol: Methode getModEventBus()
+  Ort: Variable context von Typ FMLJavaModLoadingContext
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeName.java:52: Fehler: Symbol nicht gefunden
+        modEventBus.addListener(this::setup);
+                   ^
+  Symbol: Methode addListener(this::setup)
+  Ort: Variable modEventBus von Typ BusGroup
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakenameEvents.java:26: Fehler: Inkompatible Typen: Optional<String> kann nicht in String konvertiert werden
+            event.setDisplayname(Component.literal(tag.getString("fakename")));
+                                                                ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakenameEvents.java:36: Fehler: Symbol nicht gefunden
+        if (!player.getCommandSenderWorld().isClientSide) {
+                   ^
+  Symbol: Methode getCommandSenderWorld()
+  Ort: Variable player von Typ Player
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakenameEvents.java:38: Fehler: Inkompatible Typen: Optional<String> kann nicht in String konvertiert werden
+                FakeName.sendPacket(player, player.getPersistentData().getString("fakename"), 0);
+                                                                                ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakenameEvents.java:40: Fehler: Symbol nicht gefunden
+            for (Player other : player.getServer().getPlayerList().getPlayers()) {
+                                      ^
+  Symbol: Methode getServer()
+  Ort: Variable player von Typ Player
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakenameEvents.java:43: Fehler: Inkompatible Typen: Optional<String> kann nicht in String konvertiert werden
+                            new FakeNamePacket(other.getPersistentData().getString("fakename"), other.getId(), 0),
+                                                                                  ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakenameEvents.java:55: Fehler: Inkompatible Typen: Optional<String> kann nicht in String konvertiert werden
+                FakeName.network.send(new FakeNamePacket(targetPlayer.getPersistentData().getString("fakename"),
+                                                                                                   ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakenameEvents.java:68: Fehler: Inkompatible Typen: Optional<String> kann nicht in String konvertiert werden
+            String fakename = oldPlayer.getPersistentData().getString("fakename");
+                                                                     ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeNamePacket.java:46: Fehler: Symbol nicht gefunden
+                mc.player.connection.getPlayerInfo(toSync.getGameProfile().getId())
+                                                                          ^
+  Symbol: Methode getId()
+  Ort: Klasse GameProfile
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeNamePacket.java:49: Fehler: Symbol nicht gefunden
+                mc.player.connection.getPlayerInfo(toSync.getGameProfile().getId())
+                                                                          ^
+  Symbol: Methode getId()
+  Ort: Klasse GameProfile
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeNamePacket.java:50: Fehler: Symbol nicht gefunden
+                        .setTabListDisplayName(Component.literal(toSync.getGameProfile().getName()));
+                                                                                        ^
+  Symbol: Methode getName()
+  Ort: Klasse GameProfile
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\mixins\SocialInteractionsPlayerListMixin.java:39: Fehler: Symbol nicht gefunden
+							playerinfo.getProfile().getId(), dispName.getString(), playerinfo::getSkin, true));
+							                       ^
+  Symbol: Methode getId()
+  Ort: Klasse GameProfile
+Hinweis: T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeName.java verwendet oder ³berschreibt eine veraltete API.
+Hinweis: Wiederholen Sie die Kompilierung mit -Xlint:deprecation, um Details zu erhalten.
+Hinweis: Einige Meldungen wurden vereinfacht. Wiederholen Sie die Kompilierung mit -Xdiags:verbose, um die vollstõndige Ausgabe abzurufen
+16 Fehler
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+> Run with --info option to get more log output.
+> Run with --scan to get full insights.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.8/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 13s
+4 actionable tasks: 2 executed, 2 up-to-date
