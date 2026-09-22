@@ -11,20 +11,16 @@ public class FakeNamePacket {
     public int entityId;
     public int deleteFakename;
 
+    public FakeNamePacket(String fakename, int entityId, int deleteFakename) {
+        this.fakename = fakename;
+        this.entityId = entityId;
+        this.deleteFakename = deleteFakename;
+    }
+
     public FakeNamePacket(FriendlyByteBuf buf) {
         this.fakename = buf.readUtf();
         this.entityId = buf.readInt();
         this.deleteFakename = buf.readInt();
-    }
-
-    public FakeNamePacket() {
-
-    }
-
-    public FakeNamePacket(String fakename, int entityID, int delete) {
-        this.fakename = fakename;
-        this.entityId = entityID;
-        this.deleteFakename = delete;
     }
 
     public void toBytes(FriendlyByteBuf buf) {
@@ -34,23 +30,35 @@ public class FakeNamePacket {
     }
 
     public void handle(CustomPayloadEvent.Context ctx) {
-        // Since we use consumerMainThread, work is already enqueued on the main thread
-        Minecraft mc = Minecraft.getInstance();
+        ctx.enqueueWork(() -> {
+            Minecraft mc = Minecraft.getInstance();
+            if (mc.level == null)
+                return;
 
-        Player toSync = (Player) mc.level.getEntity(entityId);
+            Player toSync = (Player) mc.level.getEntity(entityId);
 
-        if (toSync != null) {
-            FakeName.performFakenameOperation(toSync, fakename, deleteFakename);
+            if (toSync != null) {
+                FakeName.performFakenameOperation(toSync, fakename, deleteFakename);
 
-            if (deleteFakename == 0)
-                mc.player.connection.getPlayerInfo(toSync.getGameProfile().getId())
-                        .setTabListDisplayName(Component.literal(fakename));
-            else
-                mc.player.connection.getPlayerInfo(toSync.getGameProfile().getId())
-                        .setTabListDisplayName(Component.literal(toSync.getGameProfile().getName()));
-        }
-
+                if (mc.player != null && mc.player.connection != null) {
+                    if (deleteFakename == 0) {
+                        try {
+                            var playerInfo = mc.player.connection.getPlayerInfo(toSync.getGameProfile().getId());
+                            if (playerInfo != null)
+                                playerInfo.setTabListDisplayName(Component.literal(fakename));
+                        } catch (Exception e) {
+                        }
+                    } else {
+                        try {
+                            var playerInfo = mc.player.connection.getPlayerInfo(toSync.getGameProfile().getId());
+                            if (playerInfo != null)
+                                playerInfo.setTabListDisplayName(Component.literal(toSync.getGameProfile().getName()));
+                        } catch (Exception e) {
+                        }
+                    }
+                }
+            }
+        });
         ctx.setPacketHandled(true);
     }
-
 }
