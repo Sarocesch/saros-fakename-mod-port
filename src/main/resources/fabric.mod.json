@@ -10,7 +10,7 @@
         "Sarocesch"
     ],
     "contact": {},
-    "license": "All rights reserved",
+    "license": "LGPL-3.0-or-later",
     "icon": "logo.png",
     "environment": "*",
     "entrypoints": {
