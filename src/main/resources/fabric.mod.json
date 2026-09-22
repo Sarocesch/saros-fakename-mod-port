@@ -10,7 +10,7 @@
         "Sarocesch"
     ],
     "contact": {},
-    "license": "All rights reserved",
+    "license": "LGPL-3.0-or-later",
     "icon": "logo.png",
     "environment": "*",
     "entrypoints": {
@@ -25,9 +25,9 @@
         "fakename.mixins.json"
     ],
     "depends": {
-        "fabricloader": ">=0.16.0",
-        "minecraft": "~1.21.10",
-        "java": ">=21",
+        "fabricloader": ">=0.18.6",
+        "minecraft": ">=26.1.1",
+        "java": ">=25",
         "fabric-api": "*"
     }
 }

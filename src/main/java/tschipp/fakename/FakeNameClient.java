@@ -4,41 +4,38 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.network.PlayerListEntry;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.Text;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.PlayerInfo;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.network.chat.Component;
 
 @Environment(EnvType.CLIENT)
 public class FakeNameClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        // Register client-side packet handler with new API
-        ClientPlayNetworking.registerGlobalReceiver(FakeNamePayload.ID,
+        ClientPlayNetworking.registerGlobalReceiver(FakeNamePayload.TYPE,
                 (payload, context) -> {
                     String fakename = payload.fakename();
                     int entityId = payload.entityId();
                     int operation = payload.operation();
 
                     context.client().execute(() -> {
-                        MinecraftClient client = context.client();
-                        if (client.world == null)
-                            return;
+                        Minecraft client = context.client();
+                        if (client.level == null) return;
 
-                        PlayerEntity toSync = (PlayerEntity) client.world.getEntityById(entityId);
+                        Player toSync = (Player) client.level.getEntity(entityId);
 
                         if (toSync != null) {
                             FakeName.performFakenameOperation(toSync, fakename, operation);
 
-                            // Update tab list
-                            PlayerListEntry playerInfo = client.player.networkHandler
-                                    .getPlayerListEntry(toSync.getUuid());
+                            PlayerInfo playerInfo = client.player.connection
+                                    .getPlayerInfo(toSync.getUUID());
                             if (playerInfo != null) {
                                 if (operation == 0) {
-                                    playerInfo.setDisplayName(Text.literal(fakename));
+                                    playerInfo.setTabListDisplayName(Component.literal(fakename));
                                 } else {
-                                    playerInfo.setDisplayName(Text.literal(toSync.getGameProfile().name()));
+                                    playerInfo.setTabListDisplayName(Component.literal(toSync.getGameProfile().name()));
                                 }
                             }
                         }
