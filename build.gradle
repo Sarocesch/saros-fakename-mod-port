@@ -5,7 +5,7 @@ plugins {
     id 'net.minecraftforge.gradle' version '[7.0.17,8)'
 }
 
-version = '1.11'
+version = '1.11'
 
 // mods.toml declares version="${file.jarVersion}", which FML reads from the jar
 // manifest. Without this the mod loads as "0.0NONE".
@@ -59,4 +59,15 @@ tasks.withType(JavaCompile).configureEach {
 
 test {
     useJUnitPlatform()
+}
+
+// Forge 26.3 ships Mixin 0.8.7 (max class version 65): restamp mixin classes so they get applied
+tasks.named('compileJava') {
+    doLast { task ->
+        task.destinationDirectory.get().asFile.eachFileRecurse(groovy.io.FileType.FILES) { f ->
+            if (!f.name.endsWith('.class') || !f.path.replace(File.separator, '/').contains('/mixins/')) return
+            byte[] b = f.bytes
+            if (b.length > 7 && ((b[7] & 0xFF) > 65)) { b[6] = 0; b[7] = (byte) 65; f.bytes = b }
+        }
+    }
 }
