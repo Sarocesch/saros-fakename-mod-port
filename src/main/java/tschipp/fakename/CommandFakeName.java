@@ -8,6 +8,8 @@ import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 
 import net.minecraft.command.argument.EntityArgumentType;
+import net.minecraft.command.permission.Permission;
+import net.minecraft.command.permission.PermissionLevel;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
@@ -37,7 +39,7 @@ public class CommandFakeName {
                                 .then(
                                         CommandManager.argument("target", EntityArgumentType.players())
                                                 .requires(src -> src
-                                                        .hasPermissionLevel(Config.getCommandPermissionLevelAll()))
+                                                        .getPermissions().hasPermission(new Permission.Level(PermissionLevel.fromLevel(Config.getCommandPermissionLevelAll()))))
                                                 .executes(cmd -> handleClear(cmd.getSource(),
                                                         EntityArgumentType.getPlayers(cmd, "target"))))
                                 .executes(cmd -> handleClear(cmd.getSource(),
@@ -53,7 +55,7 @@ public class CommandFakeName {
                                 .then(
                                         CommandManager.argument("target", EntityArgumentType.players())
                                                 .requires(src -> src
-                                                        .hasPermissionLevel(Config.getCommandPermissionLevelAll()))
+                                                        .getPermissions().hasPermission(new Permission.Level(PermissionLevel.fromLevel(Config.getCommandPermissionLevelAll()))))
                                                 .then(
                                                         CommandManager.argument("fakename", StringArgumentType.string())
                                                                 .executes(cmd -> handleSetname(

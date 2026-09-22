@@ -52,7 +52,7 @@ public class FakeName implements ModInitializer {
                 if (otherData.contains("fakename")) {
                     FakeNamePayload payload = new FakeNamePayload(
                             otherData.getString("fakename").orElse(""),
-                            other.getId(),
+                            other.getUuid(),
                             0);
                     ServerPlayNetworking.send(player, payload);
                 }
@@ -76,7 +76,7 @@ public class FakeName implements ModInitializer {
     public static void sendPacket(ServerPlayerEntity player, String fakename, int operation) {
         performFakenameOperation(player, fakename, operation);
 
-        FakeNamePayload payload = new FakeNamePayload(fakename, player.getId(), operation);
+        FakeNamePayload payload = new FakeNamePayload(fakename, player.getUuid(), operation);
 
         // Send to all players
         MinecraftServer server = player.getEntityWorld().getServer();
