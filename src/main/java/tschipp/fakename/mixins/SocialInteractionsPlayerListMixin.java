@@ -49,12 +49,13 @@ public class SocialInteractionsPlayerListMixin {
 						String profileName = playerInfo.getProfile().getName();
 						if (entry.getName().equals(profileName) && !profileName.equals(displayString)) {
 							// Replace entry with one showing the fake name
+							// In 1.21.1, the constructor takes Supplier<SkinTextures>
 							players.set(i, new SocialInteractionsPlayerListEntry(
 									client,
 									this.parent,
 									uuid,
 									displayString,
-									playerInfo::getSkinTexture,
+									playerInfo::getSkinTextures,
 									true));
 							break;
 						}
