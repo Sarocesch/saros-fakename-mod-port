@@ -1,65 +1,45 @@
 package tschipp.fakename;
 
-import java.util.function.Supplier;
-
+import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Minecraft;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.network.NetworkEvent.Context;
+import net.neoforged.neoforge.network.handling.IPayloadContext;
 
-public class FakeNamePacket
-{
-    public String fakename;
-    public int entityId;
-    public int deleteFakename;
+public record FakeNamePacket(String fakename, int entityId, int deleteFakename) implements CustomPacketPayload {
 
-    public FakeNamePacket(FriendlyByteBuf buf)
-    {
-        this.fakename = buf.readUtf();
-        this.entityId = buf.readInt();
-        this.deleteFakename = buf.readInt();
+    public static final Type<FakeNamePacket> TYPE = new Type<>(Identifier.fromNamespaceAndPath(FakeName.MODID, "fakename_sync"));
+
+    public static final StreamCodec<ByteBuf, FakeNamePacket> STREAM_CODEC = StreamCodec.composite(
+            ByteBufCodecs.STRING_UTF8, FakeNamePacket::fakename,
+            ByteBufCodecs.VAR_INT, FakeNamePacket::entityId,
+            ByteBufCodecs.VAR_INT, FakeNamePacket::deleteFakename,
+            FakeNamePacket::new
+    );
+
+    @Override
+    public Type<? extends CustomPacketPayload> type() {
+        return TYPE;
     }
 
-    public FakeNamePacket()
-    {
+    public static void handleClient(FakeNamePacket packet, IPayloadContext ctx) {
+        Minecraft mc = Minecraft.getInstance();
+        if (mc.level == null) return;
 
+        Player toSync = (Player) mc.level.getEntity(packet.entityId());
+        if (toSync != null) {
+            FakeName.performFakenameOperation(toSync, packet.fakename(), packet.deleteFakename());
+
+            if (packet.deleteFakename() == 0)
+                mc.player.connection.getPlayerInfo(toSync.getGameProfile().id())
+                        .setTabListDisplayName(Component.literal(packet.fakename()));
+            else
+                mc.player.connection.getPlayerInfo(toSync.getGameProfile().id())
+                        .setTabListDisplayName(Component.literal(toSync.getGameProfile().name()));
+        }
     }
-
-    public FakeNamePacket(String fakename, int entityID, int delete)
-    {
-        this.fakename = fakename;
-        this.entityId = entityID;
-        this.deleteFakename = delete;
-    }
-
-    public void toBytes(FriendlyByteBuf buf)
-    {
-        buf.writeUtf(fakename);
-        buf.writeInt(entityId);
-        buf.writeInt(deleteFakename);
-    }
-
-    public void handle(Supplier<Context> ctx)
-    {
-        ctx.get().enqueueWork(() -> {
-        	Minecraft mc = Minecraft.getInstance();
-
-            Player toSync = (Player) mc.level.getEntity(entityId);
-
-            if (toSync != null)
-            {
-                ctx.get().setPacketHandled(true);
-
-                FakeName.performFakenameOperation(toSync, fakename, deleteFakename);
-
-                if(deleteFakename == 0)
-                    mc.player.connection.getPlayerInfo(toSync.getGameProfile().getId()).setTabListDisplayName(Component.literal(fakename));
-                else
-                    mc.player.connection.getPlayerInfo(toSync.getGameProfile().getId()).setTabListDisplayName(Component.literal(toSync.getGameProfile().getName()));
-            }
-
-        });
-    }
-
 }
