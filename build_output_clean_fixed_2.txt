@@ -1,0 +1,180 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.8/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :
+MixinGradle did not locate the diffplug APT plugin, skipping eclipse task configuration
+
+> Task :clean
+> Task :downloadMcpConfig
+> Task :extractSrg
+> Task :createMcpToSrg
+
+> Task :compileJava
+Hinweis: SpongePowered MIXIN Annotation Processor Version=0.8.5 (MixinGradle Version=0.7.38)
+Hinweis: Supported obfuscation types: ObfuscationServiceMCP supports [notch] ObfuscationServiceFG3 supports [searge]
+Hinweis: Loading searge mappings from T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\build\createMcpToSrg\output.tsrg
+Hinweis: Writing refmap to T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\build\tmp\compileJava\compileJava-refmap.json
+Hinweis: Writing refmap to T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\build\tmp\compileJava\compileJava-refmap.json
+Hinweis: Writing searge composite mappings to T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\build\tmp\compileJava\compileJava-mappings.tsrg
+Hinweis: Writing refmap to T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\build\tmp\compileJava\compileJava-refmap.json
+Hinweis: Writing refmap to T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\build\tmp\compileJava\compileJava-refmap.json
+Hinweis: Writing searge composite mappings to T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\build\tmp\compileJava\compileJava-mappings.tsrg
+Hinweis: T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeName.java verwendet oder ³berschreibt eine veraltete API.
+Hinweis: Wiederholen Sie die Kompilierung mit -Xlint:deprecation, um Details zu erhalten.
+
+> Task :addMixinsToDeobfJar
+> Task :processResources
+> Task :classes
+> Task :deobfJar
+> Task :addMixinsToJar
+> Task :jar
+> Task :addMixinsToJavadocJar
+
+> Task :javadoc
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\CommandFakeName.java:33: Warnung: kein Kommentar
+public class CommandFakeName {
+       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\CommandFakeName.java:142: Warnung: kein Kommentar
+    public static class FakenameArgumentType implements ArgumentType<String> {
+                  ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\CommandFakeName.java:33: Warnung: Verwendung von Standardkonstruktor, der keinen Kommentar bereitstellt
+public class CommandFakeName {
+       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\CommandFakeName.java:35: Warnung: kein Kommentar
+    public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
+                       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\CommandFakeName.java:142: Warnung: Verwendung von Standardkonstruktor, der keinen Kommentar bereitstellt
+    public static class FakenameArgumentType implements ArgumentType<String> {
+                  ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\CommandFakeName.java:144: Warnung: kein Kommentar
+        public static FakenameArgumentType fakename() {
+                                           ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\Config.java:9: Warnung: kein Kommentar
+public class Config
+       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\Config.java:21: Warnung: kein Kommentar
+	public static class ServerConfig
+	              ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\Config.java:11: Warnung: kein Kommentar
+	public static final ServerConfig SERVER;
+	                                 ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\Config.java:12: Warnung: kein Kommentar
+	public static final ForgeConfigSpec SERVER_SPEC;
+	                                    ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\Config.java:9: Warnung: Verwendung von Standardkonstruktor, der keinen Kommentar bereitstellt
+public class Config
+       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\Config.java:25: Warnung: kein Kommentar
+		public final IntValue commandPermissionLevelAll;
+		                      ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\Config.java:23: Warnung: kein Kommentar
+		public final IntValue commandPermissionLevelSelf;
+		                      ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\Config.java:27: Warnung: kein Kommentar
+		public ServerConfig(ForgeConfigSpec.Builder builder)
+		       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeName.java:35: Warnung: kein Kommentar
+public class FakeName {
+       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeName.java:40: Warnung: kein Kommentar
+    public static IModInfo info;
+                           ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeName.java:36: Warnung: kein Kommentar
+    public static final String MODID = "fakename";
+                               ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeName.java:38: Warnung: kein Kommentar
+    public static SimpleChannel network;
+                                ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeName.java:51: Warnung: kein Kommentar
+    public FakeName(FMLJavaModLoadingContext context) {
+           ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeName.java:126: Warnung: kein Kommentar
+    public static void performFakenameOperation(Player player, String fakename, int operation) {
+                       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeName.java:121: Warnung: kein Kommentar
+    public static void sendPacket(Player player, String fakename, int operation) {
+                       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeName.java:103: Warnung: kein Kommentar
+    public static void setup(final FMLCommonSetupEvent event) {
+                       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakenameEvents.java:15: Warnung: kein Kommentar
+public class FakenameEvents {
+       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakenameEvents.java:15: Warnung: Verwendung von Standardkonstruktor, der keinen Kommentar bereitstellt
+public class FakenameEvents {
+       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakenameEvents.java:65: Warnung: kein Kommentar
+    public static void onClone(PlayerEvent.Clone event) {
+                       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakenameEvents.java:34: Warnung: kein Kommentar
+    public static void onJoinWorld(PlayerEvent.PlayerLoggedInEvent event) {
+                       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakenameEvents.java:51: Warnung: kein Kommentar
+    public static void onTracking(PlayerEvent.StartTracking event) {
+                       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakenameEvents.java:23: Warnung: kein Kommentar
+    public static void renderName(PlayerEvent.NameFormat event) {
+                       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakenameEvents.java:18: Warnung: kein Kommentar
+    public static void serverLoad(RegisterCommandsEvent event) {
+                       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeNamePacket.java:9: Warnung: kein Kommentar
+public class FakeNamePacket {
+       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeNamePacket.java:12: Warnung: kein Kommentar
+    public int deleteFakename;
+               ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeNamePacket.java:11: Warnung: kein Kommentar
+    public int entityId;
+               ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeNamePacket.java:10: Warnung: kein Kommentar
+    public String fakename;
+                  ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeNamePacket.java:20: Warnung: kein Kommentar
+    public FakeNamePacket() {
+           ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeNamePacket.java:24: Warnung: kein Kommentar
+    public FakeNamePacket(String fakename, int entityID, int delete) {
+           ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeNamePacket.java:14: Warnung: kein Kommentar
+    public FakeNamePacket(FriendlyByteBuf buf) {
+           ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeNamePacket.java:36: Warnung: kein Kommentar
+    public void handle(CustomPayloadEvent.Context ctx) {
+                ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\FakeNamePacket.java:30: Warnung: kein Kommentar
+    public void toBytes(FriendlyByteBuf buf) {
+                ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\mixins\SocialInteractionsPlayerListMixin.java:21: Warnung: kein Kommentar
+public class SocialInteractionsPlayerListMixin {
+       ^
+T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\src\main\java\tschipp\fakename\mixins\SocialInteractionsPlayerListMixin.java:21: Warnung: Verwendung von Standardkonstruktor, der keinen Kommentar bereitstellt
+public class SocialInteractionsPlayerListMixin {
+       ^
+40 Warnungen
+
+> Task :javadocJar
+> Task :configureReobfTaskForReobfJar
+> Task :reobfJar
+> Task :configureReobfTaskForReobfJarJar
+> Task :addMixinsToJarJar
+> Task :jarJar SKIPPED
+> Task :reobfJarJar SKIPPED
+> Task :addMixinsToSourcesJar
+> Task :sourcesJar
+> Task :assemble
+> Task :compileTestJava
+> Task :processTestResources NO-SOURCE
+> Task :testClasses
+> Task :test
+> Task :check
+> Task :build
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.8/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 22s
+21 actionable tasks: 21 executed
