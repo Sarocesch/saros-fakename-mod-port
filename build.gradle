@@ -1,0 +1,62 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'eclipse'
+    id 'net.minecraftforge.gradle' version '[7.0.17,8)'
+}
+
+version = '1.11'
+
+// mods.toml declares version="${file.jarVersion}", which FML reads from the jar
+// manifest. Without this the mod loads as "0.0NONE".
+jar {
+    manifest {
+        attributes([
+            'Implementation-Version': project.version
+        ])
+    }
+}
+group = 'de.sarocesch'
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+minecraft {
+    runs {
+        configureEach {
+            workingDir = layout.projectDirectory.dir('run')
+            systemProperty 'eventbus.api.strictRuntimeChecks', 'true'
+            systemProperty 'forge.enabledGameTestNamespaces', 'fakename'
+        }
+        register('client')
+        register('server') { args '--nogui' }
+        register('gameTestServer')
+        register('data') {
+            workingDir = layout.projectDirectory.dir('run-data')
+            args '--mod', 'fakename', '--all', '--output', layout.projectDirectory.dir('src/generated/resources'), '--existing', layout.projectDirectory.dir('src/main/resources')
+        }
+    }
+}
+
+repositories {
+    minecraft.mavenizer(it)
+    maven fg.forgeMaven
+    maven fg.minecraftLibsMaven
+    mavenCentral()
+}
+
+dependencies {
+    implementation minecraft.dependency('net.minecraftforge:forge:26.3-66.0.2')
+    annotationProcessor 'net.minecraftforge:eventbus-validator:7.0.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}

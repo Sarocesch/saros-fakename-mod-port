@@ -1,0 +1,742 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.8/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :
+MixinGradle did not locate the diffplug APT plugin, skipping eclipse task configuration
+
+> Task :downloadMcpConfig
+> Task :extractSrg UP-TO-DATE
+> Task :createMcpToSrg UP-TO-DATE
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :createSrgToMcp
+> Task :downloadMCMeta UP-TO-DATE
+> Task :downloadAssets UP-TO-DATE
+> Task :extractNatives
+> Task :makeSrcDirs
+> Task :prepareRuns
+> Task :prepareRunClient
+> Task :prepareRunClientCompile UP-TO-DATE
+
+> Task :runClient
+Ignoring duplicate module on SecureModuleFinder: org.lwjgl.freetype.natives: Jar[jar:file:///C:/Users/saroc/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-freetype/3.3.3/82028265a0a2ff33523ca75137ada7dc176e5210/lwjgl-freetype-3.3.3-natives-windows-arm64.jar!/]
+Ignoring duplicate module on SecureModuleFinder: org.lwjgl.freetype.natives: Jar[jar:file:///C:/Users/saroc/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-freetype/3.3.3/15a8c1de7f51d07a92eae7ce1222557073a0c0c3/lwjgl-freetype-3.3.3-natives-windows-x86.jar!/]
+Ignoring duplicate module on SecureModuleFinder: org.lwjgl.glfw.natives: Jar[jar:file:///C:/Users/saroc/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-glfw/3.3.3/f27018dc74f6289574502b46cce55d52817554e2/lwjgl-glfw-3.3.3-natives-windows-arm64.jar!/]
+Ignoring duplicate module on SecureModuleFinder: org.lwjgl.glfw.natives: Jar[jar:file:///C:/Users/saroc/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-glfw/3.3.3/32334f3fd5270a59bad9939a93115acb6de36dcf/lwjgl-glfw-3.3.3-natives-windows-x86.jar!/]
+Ignoring duplicate module on SecureModuleFinder: org.lwjgl.jemalloc.natives: Jar[jar:file:///C:/Users/saroc/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-jemalloc/3.3.3/ba1f3fed0ee4be0217eaa41c5bbfb4b9b1383c33/lwjgl-jemalloc-3.3.3-natives-windows-arm64.jar!/]
+Ignoring duplicate module on SecureModuleFinder: org.lwjgl.jemalloc.natives: Jar[jar:file:///C:/Users/saroc/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-jemalloc/3.3.3/f6063b6e0f23be483c5c88d84ce51b39dc69126c/lwjgl-jemalloc-3.3.3-natives-windows-x86.jar!/]
+Ignoring duplicate module on SecureModuleFinder: org.lwjgl.openal.natives: Jar[jar:file:///C:/Users/saroc/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-openal/3.3.3/8e0615235116b9e4160dfe87bec90f5f6378bf72/lwjgl-openal-3.3.3-natives-windows-arm64.jar!/]
+Ignoring duplicate module on SecureModuleFinder: org.lwjgl.openal.natives: Jar[jar:file:///C:/Users/saroc/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-openal/3.3.3/87b8d5050e3adb46bb58fe1cb2669a4a48fce10d/lwjgl-openal-3.3.3-natives-windows-x86.jar!/]
+Ignoring duplicate module on SecureModuleFinder: org.lwjgl.opengl.natives: Jar[jar:file:///C:/Users/saroc/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-opengl/3.3.3/65e956d3735a1abdc82eff4baec1b61174697d4b/lwjgl-opengl-3.3.3-natives-windows-arm64.jar!/]
+Ignoring duplicate module on SecureModuleFinder: org.lwjgl.opengl.natives: Jar[jar:file:///C:/Users/saroc/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-opengl/3.3.3/d32d833dcaa2f355a886eaf21f0408b5f03241d/lwjgl-opengl-3.3.3-natives-windows-x86.jar!/]
+Ignoring duplicate module on SecureModuleFinder: org.lwjgl.stb.natives: Jar[jar:file:///C:/Users/saroc/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-stb/3.3.3/a584ab44de569708871f0a79561f4d8c37487f2c/lwjgl-stb-3.3.3-natives-windows-arm64.jar!/]
+Ignoring duplicate module on SecureModuleFinder: org.lwjgl.stb.natives: Jar[jar:file:///C:/Users/saroc/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-stb/3.3.3/b5c874687b9aac1a936501d4ed2c49567fd1b575/lwjgl-stb-3.3.3-natives-windows-x86.jar!/]
+Ignoring duplicate module on SecureModuleFinder: org.lwjgl.tinyfd.natives: Jar[jar:file:///C:/Users/saroc/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-tinyfd/3.3.3/a88c494f3006eb91a7433b12a3a55a9a6c20788b/lwjgl-tinyfd-3.3.3-natives-windows-arm64.jar!/]
+Ignoring duplicate module on SecureModuleFinder: org.lwjgl.tinyfd.natives: Jar[jar:file:///C:/Users/saroc/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-tinyfd/3.3.3/c336c84ee88cccb495c6ffa112395509e7378e8a/lwjgl-tinyfd-3.3.3-natives-windows-x86.jar!/]
+Ignoring duplicate module on SecureModuleFinder: org.lwjgl.natives: Jar[jar:file:///C:/Users/saroc/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl/3.3.3/e9aca8c5479b520a2a7f0d542a118140e812c5e8/lwjgl-3.3.3-natives-windows-arm64.jar!/]
+Ignoring duplicate module on SecureModuleFinder: org.lwjgl.natives: Jar[jar:file:///C:/Users/saroc/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl/3.3.3/9e670718e050aeaeea0c2d5b907cffb142f2e58f/lwjgl-3.3.3-natives-windows-x86.jar!/]
+2025-12-29T21:38:47.773527700Z main WARN Advanced terminal features are not available in this environment
+[22:38:47] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_userdev_client, --version, MOD_DEV, --assetIndex, 27, --assetsDir, C:\Users\saroc\.gradle\caches\forge_gradle\assets, --gameDir, ., --mixin.config, fakename.mixins.json]
+[22:38:47] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.9+10-LTS
+[22:38:47] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 10.2.4 starting: java version 21.0.9 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[22:38:47] [main/DEBUG] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Found launch services [minecraft,forge_userdev_server_gametest,forge_dev_client,forge_userdev_data,forge_dev_server_gametest,forge_dev_client_data,forge_userdev_server,forge_client,forge_server,forge_userdev_client_data,forge_userdev_client,forge_dev_data,forge_dev,testharness,forge_userdev,forge_dev_server]
+[22:38:47] [main/DEBUG] [cp.mo.mo.NameMappingServiceHandler/MODLAUNCHER]: Found naming services : [srgtomcp]
+[22:38:47] [main/DEBUG] [cp.mo.mo.LaunchPluginHandler/MODLAUNCHER]: Found launch plugins: [mixin,slf4jfixer,runtime_enum_extender,capability_token_subclass,accesstransformer,runtimedistcleaner]
+[22:38:47] [main/DEBUG] [cp.mo.mo.TransformationServicesHandler/MODLAUNCHER]: Discovering transformation services
+[22:38:47] [main/DEBUG] [ne.mi.fm.lo.FMLPaths/CORE]: Path GAMEDIR is T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\run
+[22:38:47] [main/DEBUG] [ne.mi.fm.lo.FMLPaths/CORE]: Path MODSDIR is T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\run\mods
+[22:38:47] [main/DEBUG] [ne.mi.fm.lo.FMLPaths/CORE]: Path CONFIGDIR is T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\run\config
+[22:38:47] [main/DEBUG] [ne.mi.fm.lo.FMLPaths/CORE]: Path FMLCONFIG is T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\run\config\fml.toml
+[22:38:47] [main/INFO] [ne.mi.fm.lo.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[22:38:47] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[22:38:48] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServicesHandler/MODLAUNCHER]: Found transformer service: fml: /
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServicesHandler/MODLAUNCHER]: Found transformer service: forge: /
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServicesHandler/MODLAUNCHER]: Found transformer service: mixin: /
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServicesHandler/MODLAUNCHER]: Transformation services loading
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Loading service mixin
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Loaded service mixin
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Loading service fml
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.FMLLoader/CORE]: Detected version data : VersionInfo[forgeVersion=60.1.0, mcVersion=1.21.10, mcpVersion=20251007.101210, forgeGroup=net.minecraftforge]
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.LauncherVersion/CORE]: Found FMLLauncher version 60.1.0
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.FMLLoader/CORE]: FML 60.1.0 loading
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.FMLLoader/CORE]: Found ModLauncher version: 10.2.4
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.FMLLoader/CORE]: Found AccessTransformer version: 8.2.2
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.FMLLoader/CORE]: Found RuntimeDistCleaner version: 60.1.0
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.FMLLoader/CORE]: FML found CoreMod version : 5.2.6
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.FMLLoader/CORE]: Found ForgeSPI version: 7.1.5
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Loaded service fml
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Loading service forge
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Loaded service forge
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServicesHandler/MODLAUNCHER]: Configuring option handling for services
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServicesHandler/MODLAUNCHER]: Transformation services initializing
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Initializing transformation service mixin
+[22:38:48] [main/DEBUG] [mixin/]: MixinService [ModLauncher] was successfully booted in SecureModuleClassLoader[SECURE-BOOTSTRAP]@1128096251
+[22:38:48] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=jar:file:///C:/Users/saroc/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.7/8ab114ac385e6dbdad5efafe28aba4df8120915f/mixin-0.8.7.jar!/ Service=ModLauncher Env=CLIENT
+[22:38:48] [main/DEBUG] [mixin/]: Initialising Mixin Platform Manager
+[22:38:48] [main/DEBUG] [mixin/]: Adding mixin platform agents for container ModLauncher Root Container(ModLauncher:4f56a0a2)
+[22:38:48] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentMinecraftForge for ModLauncher Root Container(ModLauncher:4f56a0a2)
+[22:38:48] [main/DEBUG] [mixin/]: MixinPlatformAgentMinecraftForge rejected container ModLauncher Root Container(ModLauncher:4f56a0a2)
+[22:38:48] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentDefault for ModLauncher Root Container(ModLauncher:4f56a0a2)
+[22:38:48] [main/DEBUG] [mixin/]: MixinPlatformAgentDefault accepted container ModLauncher Root Container(ModLauncher:4f56a0a2)
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Initialized transformation service mixin
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Initializing transformation service fml
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.FMLServiceProvider/CORE]: Setting up basic FML game directories
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.FMLPaths/CORE]: Path GAMEDIR is T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\run
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.FMLPaths/CORE]: Path MODSDIR is T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\run\mods
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.FMLPaths/CORE]: Path CONFIGDIR is T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\run\config
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.FMLPaths/CORE]: Path FMLCONFIG is T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\run\config\fml.toml
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.FMLServiceProvider/CORE]: Loading configuration
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.FMLServiceProvider/CORE]: Preparing ModFile
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.FMLServiceProvider/CORE]: Preparing launch handler
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.FMLLoader/CORE]: Using forge_userdev_client as launch service
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Initialized transformation service fml
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Initializing transformation service forge
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Initialized transformation service forge
+[22:38:48] [main/DEBUG] [cp.mo.mo.NameMappingServiceHandler/MODLAUNCHER]: Current naming domain is 'mcp'
+[22:38:48] [main/DEBUG] [cp.mo.mo.NameMappingServiceHandler/MODLAUNCHER]: Identified name mapping providers {srg=net.minecraftforge.fml.loading.MCPNamingService@5baaae4c}
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServicesHandler/MODLAUNCHER]: Transformation services begin scanning
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Beginning scan trigger - transformation service mixin
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: End scan trigger - transformation service mixin
+[22:38:48] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Beginning scan trigger - transformation service fml
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.FMLServiceProvider/CORE]: Initiating mod scan
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.mo.ModDiscoverer/CORE]: Found Mod Locators : (mods folder:null),(minecraft:null),(classpath:null),(forge_dev_locator:null),(forge_userdev_locator:null)
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.mo.ModDiscoverer/CORE]: Found Dependency Locators : (JarInJar:null)
+[22:38:48] [EarlyDisplay/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 5060 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 591.59, NVIDIA Corporation
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.mo.ModFileInfo/LOADING]: Found valid mod file union:/C:/Users/saroc/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.10-60.1.0_mapped_official_1.21.10/forge-1.21.10-60.1.0_mapped_official_1.21.10.jar%230!/ with {minecraft} mods - versions {1.21.10}
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/JAR-JAR]: Found JarJar Option: C:\Users\saroc\.gradle\caches\modules-2\files-2.1\io.github.llamalad7\mixinextras-forge\0.5.0\cebe4d98a42a4a32ebf0ddec7b93d5bdbdad009\mixinextras-forge-0.5.0.jar
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Considering mod file candidate T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\build\classes\java\main
+[22:38:48] [main/DEBUG] [ne.mi.fm.lo.mo.ModFileInfo/LOADING]: Found valid mod file T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\build\classes\java\main with {fakename} mods - versions {0.0NONE}
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Considering mod file candidate /
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.mo.ModFileInfo/LOADING]: Found valid mod file union:/C:/Users/saroc/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.10-60.1.0_mapped_official_1.21.10/forge-1.21.10-60.1.0_mapped_official_1.21.10.jar%231!/ with {forge} mods - versions {60.1.0}
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/JAR-JAR]: Failed to load resource META-INF/jarjar/metadata.json from , it does not contain dependency information.
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/JAR-JAR]: Failed to load resource META-INF/jarjar/metadata.json from , it does not contain dependency information.
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/JAR-JAR]: Failed to load resource META-INF/jarjar/metadata.json from javafmllanguage-1.21.10-60.1.0.jar, it does not contain dependency information.
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/JAR-JAR]: Failed to load resource META-INF/jarjar/metadata.json from lowcodelanguage-1.21.10-60.1.0.jar, it does not contain dependency information.
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/JAR-JAR]: Failed to load resource META-INF/jarjar/metadata.json from mclanguage-1.21.10-60.1.0.jar, it does not contain dependency information.
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/JAR-JAR]: Failed to load resource META-INF/jarjar/metadata.json from main, it does not contain dependency information.
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/JAR-JAR]: Failed to load resource META-INF/jarjar/metadata.json from fmlcore-1.21.10-60.1.0.jar, it does not contain dependency information.
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/JAR-JAR]: Failed to load resource META-INF/jarjar/metadata.json from mixinextras-forge-0.5.0.jar!/META-INF/jars/MixinExtras-0.5.0.jar, it does not contain dependency information.
+[22:38:49] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/JAR-JAR]: JarJar Candidated for com.github.LlamaLad7:MixinExtras
+[22:38:49] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/JAR-JAR]: 	*mixinextras-forge-0.5.0.jar!/META-INF/jars/MixinExtras-0.5.0.jar
+[22:38:49] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/JAR-JAR]: JarJar Candidated for io.github.llamalad7:mixinextras-forge
+[22:38:49] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/JAR-JAR]: 	*mixinextras-forge-0.5.0.jar
+[22:38:49] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/JAR-JAR]: Found 2 dependencies adding them to mods collection
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.mo.ModFile/LOADING]: Loading mod file union:/C:/Users/saroc/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.10-60.1.0_mapped_official_1.21.10/forge-1.21.10-60.1.0_mapped_official_1.21.10.jar%230!/ with languages [LanguageSpec[languageName=minecraft, acceptedVersions=1]]
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.mo.ModFile/LOADING]: Loading mod file union:/C:/Users/saroc/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.10-60.1.0_mapped_official_1.21.10/forge-1.21.10-60.1.0_mapped_official_1.21.10.jar%231!/ with languages [LanguageSpec[languageName=javafml, acceptedVersions=[24,]]]
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.mo.ModFile/LOADING]: Loading mod file T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\build\classes\java\main with languages [LanguageSpec[languageName=javafml, acceptedVersions=[60,)]]
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.mo.ModFile/LOADING]: Loading mod file /MixinExtras-0.5.0.jar with languages []
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.mo.ModFile/LOADING]: Loading mod file mixinextras-forge-0.5.0.jar with languages []
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: End scan trigger - transformation service fml
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Beginning scan trigger - transformation service forge
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: End scan trigger - transformation service forge
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.LanguageLoadingProvider/CORE]: Found 3 language providers
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.LanguageLoadingProvider/CORE]: Found language provider lowcodefml, version 60
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.LanguageLoadingProvider/CORE]: Found language provider minecraft, version 1.0
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.LanguageLoadingProvider/CORE]: Found language provider javafml, version 60.1.0
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.ModSorter/]: Configured system mods: [minecraft, forge]
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.ModSorter/]: Found system mod: minecraft
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.ModSorter/]: Found system mod: forge
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.ModSorter/LOADING]: Found 2 mod requirements (2 mandatory, 0 optional)
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.ModSorter/LOADING]: Found 0 mod requirements missing (0 mandatory, 0 optional)
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.MCPNamingService/CORE]: Loaded 42898 method mappings from methods.csv
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.MCPNamingService/CORE]: Loaded 41695 field mappings from fields.csv
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformationServicesHandler/MODLAUNCHER]: Transformation services loading transformers
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Initializing transformers for transformation service mixin
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Initialized transformers for transformation service mixin
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Initializing transformers for transformation service fml
+[22:38:49] [main/DEBUG] [ne.mi.fm.lo.FMLServiceProvider/CORE]: Loading coremod transformers
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Initialized transformers for transformation service fml
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Initializing transformers for transformation service forge
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer FieldToMethodTransformer[className=net.minecraft.world.level.biome.Biome, fields={climateSettings=getModifiedClimateSettings, specialEffects=getModifiedSpecialEffects}] to Target : CLASS {Lnet/minecraft/world/level/biome/Biome;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer FieldToMethodTransformer[className=net.minecraft.world.item.BucketItem, fields={content=getFluid}] to Target : CLASS {Lnet/minecraft/world/item/BucketItem;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer FieldToMethodTransformer[className=net.minecraft.world.effect.MobEffectInstance, fields={effect=getEffect}] to Target : CLASS {Lnet/minecraft/world/effect/MobEffectInstance;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer FieldToMethodTransformer[className=net.minecraft.world.level.block.LiquidBlock, fields={fluid=getFluid}] to Target : CLASS {Lnet/minecraft/world/level/block/LiquidBlock;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer FieldToMethodTransformer[className=net.minecraft.world.level.block.FlowerPotBlock, fields={potted=getPotted}] to Target : CLASS {Lnet/minecraft/world/level/block/FlowerPotBlock;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/level/levelgen/structure/structures/OceanRuinPieces$OceanRuinPiece;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/entity/animal/frog/Tadpole;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/entity/EntityType;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/entity/npc/Villager;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/entity/monster/ZombieVillager;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/level/levelgen/structure/structures/OceanMonumentPieces$OceanMonumentPiece;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/level/levelgen/structure/structures/SwampHutPiece;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/entity/monster/Zombie;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/server/commands/RaidCommand;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/entity/npc/CatSpawner;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/entity/raid/Raid;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplate;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/entity/monster/Evoker$EvokerSummonSpellGoal;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/entity/ai/village/VillageSiege;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/entity/monster/Strider;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/server/commands/SummonCommand;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/level/block/entity/trialspawner/TrialSpawner;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/entity/animal/horse/SkeletonTrapGoal;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/level/levelgen/PatrolSpawner;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/entity/monster/Spider;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/level/levelgen/PhantomSpawner;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/level/NaturalSpawner;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformStore/MODLAUNCHER]: Adding transformer MethodRedirector[] to Target : CLASS {Lnet/minecraft/world/level/levelgen/structure/structures/WoodlandMansionPieces$WoodlandMansionPiece;} {} {V}
+[22:38:49] [main/DEBUG] [cp.mo.mo.TransformationServiceDecorator/MODLAUNCHER]: Initialized transformers for transformation service forge
+[22:38:49] [main/DEBUG] [mixin/]: Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:ModLauncher Root Container(ModLauncher:4f56a0a2)]
+[22:38:49] [main/DEBUG] [mixin/]: Registering mixin config: fakename.mixins.json source=null
+[22:38:49] [main/DEBUG] [mixin/]: Compatibility level JAVA_21 specified by fakename.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[22:38:49] [main/INFO] [mixin/]: Compatibility level set to JAVA_21
+[22:38:49] [main/DEBUG] [mixin/]: Processing launch tasks for PlatformAgent[MixinPlatformAgentDefault:ModLauncher Root Container(ModLauncher:4f56a0a2)]
+[22:38:49] [main/DEBUG] [mixin/]: Adding mixin platform agents for container SecureJarResource(mixin.synthetic)
+[22:38:49] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentMinecraftForge for SecureJarResource(mixin.synthetic)
+[22:38:49] [main/DEBUG] [mixin/]: MixinPlatformAgentMinecraftForge rejected container SecureJarResource(mixin.synthetic)
+[22:38:49] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentDefault for SecureJarResource(mixin.synthetic)
+[22:38:49] [main/DEBUG] [mixin/]: MixinPlatformAgentDefault accepted container SecureJarResource(mixin.synthetic)
+[22:38:49] [main/DEBUG] [mixin/]: Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(mixin.synthetic)]
+[22:38:49] [main/DEBUG] [mixin/]: Adding mixin platform agents for container SecureJarResource(minecraft)
+[22:38:49] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentMinecraftForge for SecureJarResource(minecraft)
+[22:38:49] [main/DEBUG] [mixin/]: MixinPlatformAgentMinecraftForge rejected container SecureJarResource(minecraft)
+[22:38:49] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentDefault for SecureJarResource(minecraft)
+[22:38:49] [main/DEBUG] [mixin/]: MixinPlatformAgentDefault accepted container SecureJarResource(minecraft)
+[22:38:49] [main/DEBUG] [mixin/]: Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(minecraft)]
+[22:38:49] [main/DEBUG] [mixin/]: Adding mixin platform agents for container SecureJarResource(net.minecraftforge.forge)
+[22:38:49] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentMinecraftForge for SecureJarResource(net.minecraftforge.forge)
+[22:38:49] [main/DEBUG] [mixin/]: MixinPlatformAgentMinecraftForge rejected container SecureJarResource(net.minecraftforge.forge)
+[22:38:49] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentDefault for SecureJarResource(net.minecraftforge.forge)
+[22:38:49] [main/DEBUG] [mixin/]: MixinPlatformAgentDefault accepted container SecureJarResource(net.minecraftforge.forge)
+[22:38:49] [main/DEBUG] [mixin/]: Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(net.minecraftforge.forge)]
+[22:38:49] [main/DEBUG] [mixin/]: Adding mixin platform agents for container SecureJarResource(fakename)
+[22:38:49] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentMinecraftForge for SecureJarResource(fakename)
+[22:38:49] [main/DEBUG] [mixin/]: MixinPlatformAgentMinecraftForge rejected container SecureJarResource(fakename)
+[22:38:49] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentDefault for SecureJarResource(fakename)
+[22:38:49] [main/DEBUG] [mixin/]: MixinPlatformAgentDefault accepted container SecureJarResource(fakename)
+[22:38:49] [main/DEBUG] [mixin/]: Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(fakename)]
+[22:38:49] [main/DEBUG] [mixin/]: Adding mixin platform agents for container SecureJarResource(MixinExtras)
+[22:38:49] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentMinecraftForge for SecureJarResource(MixinExtras)
+[22:38:49] [main/DEBUG] [mixin/]: MixinPlatformAgentMinecraftForge rejected container SecureJarResource(MixinExtras)
+[22:38:49] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentDefault for SecureJarResource(MixinExtras)
+[22:38:49] [main/DEBUG] [mixin/]: MixinPlatformAgentDefault accepted container SecureJarResource(MixinExtras)
+[22:38:49] [main/DEBUG] [mixin/]: Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(MixinExtras)]
+[22:38:49] [main/DEBUG] [mixin/]: Adding mixin platform agents for container SecureJarResource(mixinextras)
+[22:38:49] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentMinecraftForge for SecureJarResource(mixinextras)
+[22:38:49] [main/DEBUG] [mixin/]: MixinPlatformAgentMinecraftForge rejected container SecureJarResource(mixinextras)
+[22:38:49] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentDefault for SecureJarResource(mixinextras)
+[22:38:49] [main/DEBUG] [mixin/]: MixinPlatformAgentDefault accepted container SecureJarResource(mixinextras)
+[22:38:49] [main/DEBUG] [mixin/]: Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(mixinextras)]
+[22:38:49] [main/DEBUG] [mixin/]: Registering mixin config: mixinextras.init.mixins.json source=SecureJarResource(mixinextras)
+[22:38:49] [main/DEBUG] [mixin/]: inject() running with 7 agents
+[22:38:49] [main/DEBUG] [mixin/]: Processing inject() for PlatformAgent[MixinPlatformAgentDefault:ModLauncher Root Container(ModLauncher:4f56a0a2)]
+[22:38:49] [main/DEBUG] [mixin/]: Processing inject() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(mixin.synthetic)]
+[22:38:49] [main/DEBUG] [mixin/]: Processing inject() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(minecraft)]
+[22:38:49] [main/DEBUG] [mixin/]: Processing inject() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(net.minecraftforge.forge)]
+[22:38:49] [main/DEBUG] [mixin/]: Processing inject() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(fakename)]
+[22:38:49] [main/DEBUG] [mixin/]: Processing inject() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(MixinExtras)]
+[22:38:49] [main/DEBUG] [mixin/]: Processing inject() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(mixinextras)]
+[22:38:49] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_userdev_client' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\saroc\.gradle\caches\forge_gradle\assets, --assetIndex, 27]
+[22:38:49] [main/DEBUG] [mixin/]: Preparing mixins for MixinEnvironment[DEFAULT]
+[22:38:49] [main/DEBUG] [mixin/]: Selecting config fakename.mixins.json
+[22:38:49] [main/WARN] [mixin/]: Reference map 'fakename.refmap.json' for fakename.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:38:49] [main/DEBUG] [mixin/]: Selecting config mixinextras.init.mixins.json
+[22:38:49] [main/DEBUG] [MixinExtras|Service/]: com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0) is taking over from null
+[22:38:49] [main/DEBUG] [mixin/]: Registering new injector for @Inject with org.spongepowered.asm.mixin.injection.struct.CallbackInjectionInfo
+[22:38:49] [main/DEBUG] [mixin/]: Registering new injector for @ModifyArg with org.spongepowered.asm.mixin.injection.struct.ModifyArgInjectionInfo
+[22:38:49] [main/DEBUG] [mixin/]: Registering new injector for @ModifyArgs with org.spongepowered.asm.mixin.injection.struct.ModifyArgsInjectionInfo
+[22:38:49] [main/DEBUG] [mixin/]: Registering new injector for @Redirect with org.spongepowered.asm.mixin.injection.struct.RedirectInjectionInfo
+[22:38:49] [main/DEBUG] [mixin/]: Registering new injector for @ModifyVariable with org.spongepowered.asm.mixin.injection.struct.ModifyVariableInjectionInfo
+[22:38:49] [main/DEBUG] [mixin/]: Registering new injector for @ModifyConstant with org.spongepowered.asm.mixin.injection.struct.ModifyConstantInjectionInfo
+[22:38:49] [main/DEBUG] [mixin/]: Preparing fakename.mixins.json (1)
+[22:38:49] [main/DEBUG] [mixin/]: Preparing mixinextras.init.mixins.json (0)
+[22:38:49] [main/DEBUG] [io.ne.ut.in.lo.InternalLoggerFactory/]: Using SLF4J as the default logging framework
+[22:38:49] [main/DEBUG] [io.ne.ut.ResourceLeakDetector/]: -Dio.netty.leakDetection.level: simple
+[22:38:49] [main/DEBUG] [io.ne.ut.ResourceLeakDetector/]: -Dio.netty.leakDetection.targetRecords: 4
+[22:38:49] [pool-3-thread-1/DEBUG] [ne.mi.fm.lo.mo.AbstractModProvider/SCAN]: Scan finished: union:/C:/Users/saroc/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.10-60.1.0_mapped_official_1.21.10/forge-1.21.10-60.1.0_mapped_official_1.21.10.jar%230!/
+[22:38:49] [pool-3-thread-1/DEBUG] [ne.mi.fm.lo.mo.AbstractModProvider/SCAN]: Scan started: union:/C:/Users/saroc/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.10-60.1.0_mapped_official_1.21.10/forge-1.21.10-60.1.0_mapped_official_1.21.10.jar%231!/
+[22:38:49] [pool-3-thread-1/DEBUG] [ne.mi.fm.lo.mo.AbstractModProvider/SCAN]: Scan finished: union:/C:/Users/saroc/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.10-60.1.0_mapped_official_1.21.10/forge-1.21.10-60.1.0_mapped_official_1.21.10.jar%231!/
+[22:38:49] [pool-3-thread-1/DEBUG] [ne.mi.fm.ja.FMLJavaModLanguageProvider/SCAN]: Found @Mod class net.minecraftforge.common.ForgeMod with id forge
+[22:38:49] [pool-3-thread-1/DEBUG] [ne.mi.fm.lo.mo.AbstractModProvider/SCAN]: Scan started: file:///T:/MyModsCode/saros-fakename.fork/1.21.10%20Forge/build/classes/java/main/
+[22:38:49] [pool-3-thread-1/DEBUG] [ne.mi.fm.lo.mo.AbstractModProvider/SCAN]: Scan finished: file:///T:/MyModsCode/saros-fakename.fork/1.21.10%20Forge/build/classes/java/main/
+[22:38:49] [pool-3-thread-1/DEBUG] [ne.mi.fm.ja.FMLJavaModLanguageProvider/SCAN]: Found @Mod class tschipp.fakename.FakeName with id fakename
+[22:38:50] [main/WARN] [os.dr.wi.pe.PerfmonDisabled/]: Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
+[22:38:50] [Datafixer Bootstrap/INFO] [mojang/DataFixerBuilder]: 278 Datafixer optimizations took 333 milliseconds
+[22:38:50] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/entity/EntityType.create
+[22:38:51] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/entity/animal/frog/Tadpole.lambda$ageUp$1
+[22:38:51] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/entity/monster/Spider.finalizeSpawn
+[22:38:51] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/entity/monster/Zombie.hurtServer
+[22:38:51] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/entity/monster/Zombie.finalizeSpawn
+[22:38:51] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/entity/monster/Zombie.lambda$convertVillagerToZombieVillager$4
+[22:38:51] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/entity/npc/Villager.getBreedOffspring
+[22:38:51] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/entity/npc/Villager.lambda$thunderHit$8
+[22:38:51] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/entity/monster/ZombieVillager.lambda$finishConversion$2
+[22:38:51] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/entity/monster/Evoker$EvokerSummonSpellGoal.performSpellCasting
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/entity/animal/horse/SkeletonTrapGoal.createHorse
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/entity/animal/horse/SkeletonTrapGoal.createSkeleton
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/entity/monster/Strider.spawnJockey
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/level/levelgen/structure/structures/OceanRuinPieces$OceanRuinPiece.handleDataMarker
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/level/levelgen/structure/structures/SwampHutPiece.postProcess
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/level/levelgen/structure/structures/SwampHutPiece.spawnCat
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/level/levelgen/structure/structures/OceanMonumentPieces$OceanMonumentPiece.spawnElder
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.fo.tr.MethodRedirector/]: Redirecting method call finalizeSpawn(Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; to onFinalizeSpawn(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/world/entity/SpawnGroupData;)Lnet/minecraft/world/entity/SpawnGroupData; inside of net/minecraft/world/level/levelgen/structure/structures/WoodlandMansionPieces$WoodlandMansionPiece.handleDataMarker
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.GameData/REGISTRIES]: Creating vanilla freeze snapshot
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:block Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:fluid Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:item Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:mob_effect Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:sound_event Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:potion Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:entity_type Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:block_entity_type Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:particle_type Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:menu Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:painting_variant Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:recipe_type Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:recipe_serializer Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:attribute Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:stat_type Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:command_argument_type Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:data_component_type Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:villager_profession Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:point_of_interest_type Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:memory_module_type Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:sensor_type Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:schedule Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:activity Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:worldgen/carver Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:worldgen/feature Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:chunk_status Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:worldgen/block_state_provider_type Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:worldgen/foliage_placer_type Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:worldgen/tree_decorator_type Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.ForgeRegistry/REGISTRIES]: Registry minecraft:worldgen/biome Sync: VANILLA -> ACTIVE
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.GameData/REGISTRIES]: Vanilla registry order:
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:root
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:sound_event
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:fluid
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:particle_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:attribute
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:mob_effect
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:block
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:enchantment_effect_component_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:entity_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:loot_score_provider_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:loot_number_provider_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:map_decoration_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:loot_pool_entry_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:loot_nbt_provider_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:loot_function_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:data_component_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:item
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:game_event
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:debug_subscription
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:potion
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:block_entity_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:stat_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:custom_stat
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:chunk_status
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:rule_test
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:rule_block_entity_modifier
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:pos_rule_test
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:menu
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:recipe_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:recipe_serializer
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:position_source_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:command_argument_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:villager_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:villager_profession
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:point_of_interest_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:memory_module_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:sensor_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:activity
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:schedule
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:loot_condition_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:float_provider_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:int_provider_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:height_provider_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:block_predicate_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/carver
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/structure_processor
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/feature
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/structure_placement
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/structure_piece
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/structure_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/placement_modifier_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/block_state_provider_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/foliage_placer_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/trunk_placer_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/root_placer_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/tree_decorator_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/feature_size_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/biome_source
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/chunk_generator
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/material_condition
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/material_rule
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/density_function_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:block_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/structure_pool_element
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:worldgen/pool_alias_binding
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:decorated_pot_pattern
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:creative_mode_tab
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:trigger_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:number_format_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:entity_sub_predicate_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:data_component_predicate_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:enchantment_level_based_value_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:enchantment_entity_effect_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:enchantment_location_based_effect_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:enchantment_value_effect_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:enchantment_provider_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:consume_effect_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:recipe_display
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:slot_display
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:recipe_book_category
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:ticket_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:incoming_rpc_methods
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:outgoing_rpc_methods
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:test_environment_definition_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:test_instance_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:spawn_condition_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:dialog_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:dialog_action_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:input_control_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:dialog_body_type
+[22:38:52] [pool-5-thread-1/INFO] [ne.mi.re.GameData/REGISTRIES]: 	minecraft:test_function
+[22:38:52] [pool-5-thread-1/DEBUG] [ne.mi.re.GameData/REGISTRIES]: Vanilla freeze snapshot created
+[22:38:53] [Render thread/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/C:/Users/saroc/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.10-60.1.0_mapped_official_1.21.10/forge-1.21.10-60.1.0_mapped_official_1.21.10.jar%230!/assets/.mcassetsroot' uses unexpected schema
+[22:38:53] [Render thread/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/C:/Users/saroc/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.10-60.1.0_mapped_official_1.21.10/forge-1.21.10-60.1.0_mapped_official_1.21.10.jar%230!/data/.mcassetsroot' uses unexpected schema
+[22:38:53] [Render thread/INFO] [mojang/YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[22:38:53] [Render thread/INFO] [minecraft/Minecraft]: Setting user: Dev
+[22:38:53] [Render thread/INFO] [minecraft/Minecraft]: Backend library: LWJGL version 3.3.3+5
+[22:38:53] [Render thread/INFO] [minecraft/Minecraft]: Using optional rendering extensions: GL_ARB_buffer_storage, GL_KHR_debug, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access
+[22:38:53] [Render thread/DEBUG] [ne.mi.co.ForgeI18n/CORE]: Loading I18N data entries: 7796
+[22:38:53] [Render thread/DEBUG] [ne.mi.fm.ModWorkManager/LOADING]: Using 12 threads for parallel mod-loading
+[22:38:53] [Render thread/DEBUG] [ne.mi.fm.ja.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader TransformingClassLoader[TRANSFORMER]@80903581 - got SecureModuleClassLoader[LAYER PLUGIN]@1791014677
+[22:38:53] [Render thread/DEBUG] [ne.mi.fm.ja.FMLModContainer/LOADING]: Creating FMLModContainer instance for net.minecraftforge.common.ForgeMod
+[22:38:53] [Render thread/DEBUG] [ne.mi.fm.ja.FMLModContainer/LOADING]: Loaded modclass net.minecraftforge.forge/net.minecraftforge.common.ForgeMod with TransformingClassLoader[TRANSFORMER]@80903581
+[22:38:53] [Render thread/DEBUG] [ne.mi.fm.ja.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader TransformingClassLoader[TRANSFORMER]@80903581 - got SecureModuleClassLoader[LAYER PLUGIN]@1791014677
+[22:38:53] [Render thread/DEBUG] [ne.mi.fm.ja.FMLModContainer/LOADING]: Creating FMLModContainer instance for tschipp.fakename.FakeName
+[22:38:53] [Render thread/DEBUG] [ne.mi.fm.ja.FMLModContainer/LOADING]: Loaded modclass fakename/tschipp.fakename.FakeName with TransformingClassLoader[TRANSFORMER]@80903581
+[22:38:53] [modloading-worker-0/ERROR] [ne.mi.fm.ja.FMLModContainer/LOADING]: Failed to create mod instance. ModID: fakename, class tschipp.fakename.FakeName
+java.lang.NoSuchMethodException: tschipp.fakename.FakeName.<init>()
+	at java.base/java.lang.Class.getConstructor0(Class.java:3763) ~[?:?]
+	at java.base/java.lang.Class.getDeclaredConstructor(Class.java:2932) ~[?:?]
+	at LAYER PLUGIN/net.minecraftforge.javafmlmod@1.21.10-60.1.0/net.minecraftforge.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:135) ~[javafmllanguage-1.21.10-60.1.0.jar!/:60.1.0]
+	at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.10-60.1.0/net.minecraftforge.fml.ModStateTransitionHelper.lambda$addCompletableFutureTaskForModDispatch$4(ModStateTransitionHelper.java:120) ~[fmlcore-1.21.10-60.1.0.jar!/:1.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniRun.tryFire(CompletableFuture.java:787) [?:?]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) [?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?]
+Transformer Audit:
+[22:38:53] [modloading-worker-0/DEBUG] [ne.mi.ve.fo.ForgeVersion/CORE]: Forge Version package package net.minecraftforge.versions.forge, Forge, version 60.1 from TransformingClassLoader[TRANSFORMER]@80903581
+[22:38:53] [modloading-worker-0/DEBUG] [ne.mi.ve.fo.ForgeVersion/CORE]: Found Forge version 60.1.0
+[22:38:53] [modloading-worker-0/DEBUG] [ne.mi.ve.fo.ForgeVersion/CORE]: Found Forge spec 60.1
+[22:38:53] [modloading-worker-0/DEBUG] [ne.mi.ve.fo.ForgeVersion/CORE]: Found Forge group net.minecraftforge
+[22:38:53] [modloading-worker-0/DEBUG] [ne.mi.ve.mc.MCPVersion/CORE]: MCP Version package package net.minecraftforge.versions.mcp, Minecraft, version 1.21.10 from TransformingClassLoader[TRANSFORMER]@80903581
+[22:38:53] [modloading-worker-0/DEBUG] [ne.mi.ve.mc.MCPVersion/CORE]: Found MC version information 1.21.10
+[22:38:53] [modloading-worker-0/DEBUG] [ne.mi.ve.mc.MCPVersion/CORE]: Found MCP version information 20251007.101210
+[22:38:53] [modloading-worker-0/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Forge mod loading, version 60.1.0, for MC 1.21.10 with MCP 20251007.101210
+[22:38:53] [modloading-worker-0/INFO] [ne.mi.co.MinecraftForge/FORGE]: MinecraftForge v60.1.0 Initialized
+[22:38:53] [modloading-worker-0/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.PlatformDependent0/]: -Dio.netty.noUnsafe: false
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.PlatformDependent0/]: Java version: 21
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.PlatformDependent0/]: sun.misc.Unsafe.theUnsafe: available
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.PlatformDependent0/]: sun.misc.Unsafe base methods: all available
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.PlatformDependent0/]: sun.misc.Unsafe.storeFence: available
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.PlatformDependent0/]: java.nio.Buffer.address: available
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.PlatformDependent0/]: direct buffer constructor: unavailable
+java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled
+	at SECURE-BOOTSTRAP/io.netty.common@4.1.118.Final/io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31) ~[netty-common-4.1.118.Final.jar:4.1.118.Final]
+	at SECURE-BOOTSTRAP/io.netty.common@4.1.118.Final/io.netty.util.internal.PlatformDependent0$5.run(PlatformDependent0.java:332) ~[netty-common-4.1.118.Final.jar:4.1.118.Final]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:319) ~[?:?]
+	at SECURE-BOOTSTRAP/io.netty.common@4.1.118.Final/io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:325) ~[netty-common-4.1.118.Final.jar:4.1.118.Final]
+	at SECURE-BOOTSTRAP/io.netty.common@4.1.118.Final/io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:334) ~[netty-common-4.1.118.Final.jar:4.1.118.Final]
+	at SECURE-BOOTSTRAP/io.netty.common@4.1.118.Final/io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:90) ~[netty-common-4.1.118.Final.jar:4.1.118.Final]
+	at SECURE-BOOTSTRAP/io.netty.common@4.1.118.Final/io.netty.util.ConstantPool.<init>(ConstantPool.java:34) ~[netty-common-4.1.118.Final.jar:4.1.118.Final]
+	at SECURE-BOOTSTRAP/io.netty.common@4.1.118.Final/io.netty.util.AttributeKey$1.<init>(AttributeKey.java:27) ~[netty-common-4.1.118.Final.jar:4.1.118.Final]
+	at SECURE-BOOTSTRAP/io.netty.common@4.1.118.Final/io.netty.util.AttributeKey.<clinit>(AttributeKey.java:27) ~[netty-common-4.1.118.Final.jar:4.1.118.Final]
+	at TRANSFORMER/net.minecraftforge.forge@60.1.0/net.minecraftforge.network.NetworkInitialization.<clinit>(NetworkInitialization.java:27) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar:?]
+	at TRANSFORMER/net.minecraftforge.forge@60.1.0/net.minecraftforge.common.ForgeMod.<init>(ForgeMod.java:382) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar:?]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at LAYER PLUGIN/net.minecraftforge.javafmlmod@1.21.10-60.1.0/net.minecraftforge.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:137) ~[javafmllanguage-1.21.10-60.1.0.jar!/:60.1.0]
+	at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.10-60.1.0/net.minecraftforge.fml.ModStateTransitionHelper.lambda$addCompletableFutureTaskForModDispatch$4(ModStateTransitionHelper.java:120) ~[fmlcore-1.21.10-60.1.0.jar!/:1.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniRun.tryFire(CompletableFuture.java:787) [?:?]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) [?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?]
+Transformer Audit:
+  net.minecraftforge.common.ForgeMod
+    REASON: classloading
+  net.minecraftforge.network.NetworkInitialization
+    REASON: classloading
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.PlatformDependent0/]: java.nio.Bits.unaligned: available, true
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.PlatformDependent0/]: jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable
+java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$7 (in module io.netty.common) cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to module io.netty.common
+	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:394) ~[?:?]
+	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:714) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:571) ~[?:?]
+	at SECURE-BOOTSTRAP/io.netty.common@4.1.118.Final/io.netty.util.internal.PlatformDependent0$7.run(PlatformDependent0.java:468) ~[netty-common-4.1.118.Final.jar:4.1.118.Final]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:319) ~[?:?]
+	at SECURE-BOOTSTRAP/io.netty.common@4.1.118.Final/io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:459) ~[netty-common-4.1.118.Final.jar:4.1.118.Final]
+	at SECURE-BOOTSTRAP/io.netty.common@4.1.118.Final/io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:334) ~[netty-common-4.1.118.Final.jar:4.1.118.Final]
+	at SECURE-BOOTSTRAP/io.netty.common@4.1.118.Final/io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:90) ~[netty-common-4.1.118.Final.jar:4.1.118.Final]
+	at SECURE-BOOTSTRAP/io.netty.common@4.1.118.Final/io.netty.util.ConstantPool.<init>(ConstantPool.java:34) ~[netty-common-4.1.118.Final.jar:4.1.118.Final]
+	at SECURE-BOOTSTRAP/io.netty.common@4.1.118.Final/io.netty.util.AttributeKey$1.<init>(AttributeKey.java:27) ~[netty-common-4.1.118.Final.jar:4.1.118.Final]
+	at SECURE-BOOTSTRAP/io.netty.common@4.1.118.Final/io.netty.util.AttributeKey.<clinit>(AttributeKey.java:27) ~[netty-common-4.1.118.Final.jar:4.1.118.Final]
+	at TRANSFORMER/net.minecraftforge.forge@60.1.0/net.minecraftforge.network.NetworkInitialization.<clinit>(NetworkInitialization.java:27) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar:?]
+	at TRANSFORMER/net.minecraftforge.forge@60.1.0/net.minecraftforge.common.ForgeMod.<init>(ForgeMod.java:382) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar:?]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at LAYER PLUGIN/net.minecraftforge.javafmlmod@1.21.10-60.1.0/net.minecraftforge.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:137) ~[javafmllanguage-1.21.10-60.1.0.jar!/:60.1.0]
+	at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.10-60.1.0/net.minecraftforge.fml.ModStateTransitionHelper.lambda$addCompletableFutureTaskForModDispatch$4(ModStateTransitionHelper.java:120) ~[fmlcore-1.21.10-60.1.0.jar!/:1.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniRun.tryFire(CompletableFuture.java:787) [?:?]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) [?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?]
+Transformer Audit:
+  net.minecraftforge.common.ForgeMod
+    REASON: classloading
+  net.minecraftforge.network.NetworkInitialization
+    REASON: classloading
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.PlatformDependent0/]: java.nio.DirectByteBuffer.<init>(long, {int,long}): unavailable
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.PlatformDependent/]: sun.misc.Unsafe: available
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.PlatformDependent/]: -Dio.netty.tmpdir: C:\Users\saroc\AppData\Local\Temp (java.io.tmpdir)
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.PlatformDependent/]: -Dio.netty.bitMode: 64 (sun.arch.data.model)
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.PlatformDependent/]: Platform: Windows
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.PlatformDependent/]: -Dio.netty.maxDirectMemory: -1 bytes
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.PlatformDependent/]: -Dio.netty.uninitializedArrayAllocationThreshold: -1
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.CleanerJava9/]: java.nio.ByteBuffer.cleaner(): available
+[22:38:53] [modloading-worker-0/DEBUG] [io.ne.ut.in.PlatformDependent/]: -Dio.netty.noPreferDirect: false
+[22:38:53] [modloading-worker-0/DEBUG] [ne.mi.ne.NetworkInitialization/FORGE_NETWORK]: Registering Network forge:login v0
+[22:38:53] [modloading-worker-0/DEBUG] [ne.mi.ne.NetworkInitialization/FORGE_NETWORK]: Registering Network forge:handshake v0
+[22:38:53] [modloading-worker-0/DEBUG] [ne.mi.ne.NetworkInitialization/FORGE_NETWORK]: Registering Network forge:handshake v0
+[22:38:53] [modloading-worker-0/DEBUG] [ne.mi.ne.NetworkInitialization/FORGE_NETWORK]: Registering Network forge:channel_registration v0
+[22:38:53] [modloading-worker-0/DEBUG] [ne.mi.fm.co.ConfigTracker/CONFIG]: Config file forge-client.toml for forge tracking
+[22:38:53] [modloading-worker-0/DEBUG] [ne.mi.fm.co.ConfigTracker/CONFIG]: Config file forge-server.toml for forge tracking
+[22:38:53] [modloading-worker-0/DEBUG] [ne.mi.fm.co.ConfigTracker/CONFIG]: Config file forge-common.toml for forge tracking
+[22:38:53] [modloading-worker-0/DEBUG] [ne.mi.fm.ja.AutomaticEventSubscriber/LOADING]: Attempting to inject @EventBusSubscriber classes into the eventbus for forge
+[22:38:53] [modloading-worker-0/DEBUG] [ne.mi.fm.ja.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.minecraftforge.client.model.data.ModelDataManager to FORGE
+[22:38:53] [modloading-worker-0/DEBUG] [ne.mi.fm.ja.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.minecraftforge.client.ClientForgeMod to BOTH
+[22:38:53] [Render thread/FATAL] [ne.mi.fm.ModLoader/LOADING]: Failed to complete lifecycle event CONSTRUCT, 1 errors found
+[22:38:53] [Render thread/ERROR] [ne.mi.fm.ModLoader/]: Cowardly refusing to send event net.minecraftforge.client.event.RegisterPresetEditorsEvent to a broken mod state
+[22:38:53] [Render thread/INFO] [minecraft/ReloadableResourceManager]: Reloading ResourceManager: vanilla
+[22:38:53] [Worker-Main-10/INFO] [minecraft/UnihexProvider]: Found unifont_pua-16.0.03.hex, loading
+[22:38:53] [Worker-Main-11/INFO] [minecraft/UnihexProvider]: Found unifont_all_no_pua-16.0.03.hex, loading
+[22:38:54] [Worker-Main-8/INFO] [minecraft/UnihexProvider]: Found unifont_jp_patch-16.0.03.hex, loading
+[22:38:54] [Download-1/INFO] [mojang/RealmsClient]: Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: 0
+[22:38:54] [Download-1/ERROR] [mojang/RealmsClient]: Failed to fetch Realms feature flags
+com.mojang.realmsclient.exception.RealmsServiceException: Realms authentication error with message 'java.lang.RuntimeException: Failed to parse into SignedJWT: 0'
+	at TRANSFORMER/minecraft@1.21.10/com.mojang.realmsclient.client.RealmsClient.execute(RealmsClient.java:536) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar%230!/:?]
+	at TRANSFORMER/minecraft@1.21.10/com.mojang.realmsclient.client.RealmsClient.fetchFeatureFlags(RealmsClient.java:189) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar%230!/:?]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Transformer Audit:
+  com.mojang.realmsclient.client.RealmsClient
+    REASON: classloading
+[22:38:54] [Render thread/DEBUG] [ne.mi.co.ForgeI18n/CORE]: Loading I18N data entries: 7247
+[22:38:54] [Render thread/INFO] [mojang/Library]: OpenAL initialized on device OpenAL Soft on Realtek HD Audio 2nd output (Realtek(R) Audio)
+[22:38:54] [Render thread/INFO] [minecraft/SoundEngine]: Sound engine started
+[22:38:54] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[22:38:54] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 128x64x0 minecraft:textures/atlas/decorated_pot.png-atlas
+[22:38:54] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 2048x1024x0 minecraft:textures/atlas/armor_trims.png-atlas
+[22:38:54] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[22:38:54] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+[22:38:54] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[22:38:54] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x256x0 minecraft:textures/atlas/chest.png-atlas
+[22:38:54] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+[22:38:54] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x256x0 minecraft:textures/atlas/beds.png-atlas
+[22:38:54] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[22:38:54] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[22:38:54] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 256x256x0 minecraft:textures/atlas/signs.png-atlas
+[22:38:54] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x256x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+[22:38:54] [Render thread/DEBUG] [ne.mi.co.ForgeI18n/CORE]: Loading I18N data entries: 7796
+[22:38:54] [Render thread/ERROR] [minecraft/CrashReport]: Negative index in crash report handler (25/27)
+[22:38:54] [Render thread/FATAL] [ne.mi.co.ForgeMod/]: Preparing crash report with UUID b075de41-01bd-4b0b-9328-6855f63b0e18
+[22:38:54] [Render thread/FATAL] [ne.mi.cl.lo.ClientModLoader/]: Crash report saved to .\crash-reports\crash-2025-12-29_22.38.54-fml.txt
+[22:38:54] [Render thread/FATAL] [ne.mi.co.ForgeMod/]: Preparing crash report with UUID bbd226fb-415b-4ead-9851-db246ddecb55
+---- Minecraft Crash Report ----
+// I bet Cylons wouldn't have this problem.
+
+Time: 2025-12-29 22:38:54
+Description: Mod loading error has occurred
+
+java.lang.Exception: Mod Loading has failed
+	at TRANSFORMER/net.minecraftforge.forge@60.1.0/net.minecraftforge.logging.CrashReportExtender.dumpModLoadingCrashReport(CrashReportExtender.java:49) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar:?]
+	at TRANSFORMER/net.minecraftforge.forge@60.1.0/net.minecraftforge.client.loading.ClientModLoader.completeModLoading(ClientModLoader.java:112) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar:?]
+	at TRANSFORMER/minecraft@1.21.10/net.minecraft.client.Minecraft.lambda$new$7(Minecraft.java:674) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar:?]
+	at TRANSFORMER/minecraft@1.21.10/net.minecraft.Util.ifElse(Util.java:631) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar:?]
+	at TRANSFORMER/minecraft@1.21.10/net.minecraft.client.Minecraft.lambda$new$8(Minecraft.java:667) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar:?]
+	at TRANSFORMER/minecraft@1.21.10/net.minecraft.client.gui.screens.LoadingOverlay.tick(LoadingOverlay.java:136) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar:?]
+	at TRANSFORMER/minecraft@1.21.10/net.minecraft.client.Minecraft.tick(Minecraft.java:1793) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar:?]
+	at TRANSFORMER/minecraft@1.21.10/net.minecraft.client.Minecraft.runTick(Minecraft.java:1269) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar:?]
+	at TRANSFORMER/minecraft@1.21.10/net.minecraft.client.Minecraft.run(Minecraft.java:901) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar:?]
+	at TRANSFORMER/minecraft@1.21.10/net.minecraft.client.main.Main.main(Main.java:223) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.10-60.1.0/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:96) ~[fmlloader-1.21.10-60.1.0.jar!/:?]
+	at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.10-60.1.0/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.lambda$makeService$0(CommonLaunchHandler.java:79) ~[fmlloader-1.21.10-60.1.0.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:77) [modlauncher-10.2.4.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:97) [modlauncher-10.2.4.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.run(Launcher.java:116) [modlauncher-10.2.4.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.main(Launcher.java:75) [modlauncher-10.2.4.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.BootstrapEntry.main(BootstrapEntry.java:17) [modlauncher-10.2.4.jar!/:?]
+	at net.minecraftforge.bootstrap@2.1.7/net.minecraftforge.bootstrap.Bootstrap.moduleMain(Bootstrap.java:188) [bootstrap-2.1.8.jar!/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at net.minecraftforge.bootstrap.Bootstrap.bootstrapMain(Bootstrap.java:133) [bootstrap-2.1.8.jar:2.1.8]
+	at net.minecraftforge.bootstrap.Bootstrap.start(Bootstrap.java:53) [bootstrap-2.1.8.jar:2.1.8]
+	at net.minecraftforge.bootstrap.ForgeBootstrap.main(ForgeBootstrap.java:19) [bootstrap-2.1.8.jar:2.1.8]
+Transformer Audit:
+  net.minecraft.Util
+    REASON: classloading
+  net.minecraft.client.Minecraft
+    REASON: classloading
+    PLUGIN: accesstransformer:BEFORE
+  net.minecraft.client.gui.screens.LoadingOverlay
+    REASON: classloading
+  net.minecraft.client.main.Main
+    REASON: classloading
+  net.minecraftforge.client.loading.ClientModLoader
+    REASON: classloading
+  net.minecraftforge.logging.CrashReportExtender
+    REASON: classloading
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Suspected Mods: NONE
+Stacktrace:
+	at java.base/java.lang.Class.getConstructor0(Class.java:3763) ~[?:?]
+Transformer Audit:
+-- MOD fakename --
+Details:
+	Mod File: /T:/MyModsCode/saros-fakename.fork/1.21.10 Forge/build/classes/java/main/
+	Failure message: Fakename (fakename) has failed to load correctly
+		java.lang.NoSuchMethodException: tschipp.fakename.FakeName.<init>()
+	Mod Version: 0.0NONE
+	Mod Issue URL: NOT PROVIDED
+	Exception message: java.lang.NoSuchMethodException: tschipp.fakename.FakeName.<init>()
+Stacktrace:
+	at java.base/java.lang.Class.getConstructor0(Class.java:3763) ~[?:?]
+	at java.base/java.lang.Class.getDeclaredConstructor(Class.java:2932) ~[?:?]
+	at LAYER PLUGIN/net.minecraftforge.javafmlmod@1.21.10-60.1.0/net.minecraftforge.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:135) ~[javafmllanguage-1.21.10-60.1.0.jar!/:60.1.0]
+	at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.10-60.1.0/net.minecraftforge.fml.ModStateTransitionHelper.lambda$addCompletableFutureTaskForModDispatch$4(ModStateTransitionHelper.java:120) ~[fmlcore-1.21.10-60.1.0.jar!/:1.0]
+	at java.base/java.util.concurrent.CompletableFuture$UniRun.tryFire(CompletableFuture.java:787) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?]
+Transformer Audit:
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.10
+	Minecraft Version ID: 1.21.10
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 21.0.9, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 177495520 bytes (169 MiB) / 532676608 bytes (508 MiB) up to 8355053568 bytes (7968 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 7600X 6-Core Processor             
+	Identifier: AuthenticAMD Family 25 Model 97 Stepping 2
+	Microarchitecture: Zen 3
+	Frequency (GHz): 4.69
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: AMD Radeon(TM) Graphics
+	Graphics card #0 vendor: Advanced Micro Devices, Inc.
+	Graphics card #0 VRAM (MiB): 512.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.21030.31
+	Graphics card #1 name: NVIDIA GeForce GTX 1060 6GB
+	Graphics card #1 vendor: NVIDIA
+	Graphics card #1 VRAM (MiB): 6144.00
+	Graphics card #1 deviceId: VideoController2
+	Graphics card #1 versionInfo: 32.0.15.8157
+	Graphics card #2 name: NVIDIA GeForce RTX 5060 Ti
+	Graphics card #2 vendor: NVIDIA
+	Graphics card #2 VRAM (MiB): 16311.00
+	Graphics card #2 deviceId: VideoController3
+	Graphics card #2 versionInfo: 32.0.15.9159
+	Memory slot #0 capacity (MiB): 16384.00
+	Memory slot #0 clockSpeed (GHz): 6.00
+	Memory slot #0 type: DDR5
+	Memory slot #1 capacity (MiB): 16384.00
+	Memory slot #1 clockSpeed (GHz): 6.00
+	Memory slot #1 type: DDR5
+	Virtual memory max (MiB): 59509.57
+	Virtual memory used (MiB): 42000.64
+	Swap memory total (MiB): 27648.00
+	Swap memory used (MiB): 1724.54
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 61238.18, total: 952747.00
+	Space in storage for workdir (MiB): available: 40250.84, total: 953852.00
+	JVM Flags: 1 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	Debug Flags: 0 total; 
+	ModLauncher: 10.2.4
+	ModLauncher launch target: forge_userdev_client
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		/ slf4jfixer PLUGINSERVICE 
+		/ runtimedistcleaner PLUGINSERVICE 
+		/ runtime_enum_extender PLUGINSERVICE 
+		/ capability_token_subclass PLUGINSERVICE 
+		/ accesstransformer PLUGINSERVICE 
+		/ mixin PLUGINSERVICE 
+		/ fml TRANSFORMATIONSERVICE 
+		/ forge TRANSFORMATIONSERVICE 
+		/ mixin TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		lowcodefml@60
+		minecraft@1.0
+		javafml@60.1.0
+	Mod List: 
+		union:/C:/Users/saroc/.gradle/caches/forge_gradle/|Minecraft                     |minecraft                     |1.21.10             |COMMON_SET|Manifest: NOSIGNATURE
+		union:/C:/Users/saroc/.gradle/caches/forge_gradle/|Forge                         |forge                         |60.1.0              |COMMON_SET|Manifest: NOSIGNATURE
+		T:\MyModsCode\saros-fakename.fork\1.21.10 Forge\bu|Fakename                      |fakename                      |0.0NONE             |ERROR     |Manifest: NOSIGNATURE
+	Crash Report UUID: bbd226fb-415b-4ead-9851-db246ddecb55
+	FML: 60.1
+	Forge: net.minecraftforge:60.1.0[22:38:54] [IO-Worker-1/INFO] [mojang/RealmsClient]: Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: 0
+[22:38:54] [IO-Worker-1/ERROR] [mojang/RealmsAvailability]: Couldn't connect to realms
+com.mojang.realmsclient.exception.RealmsServiceException: Realms authentication error with message 'java.lang.RuntimeException: Failed to parse into SignedJWT: 0'
+	at TRANSFORMER/minecraft@1.21.10/com.mojang.realmsclient.client.RealmsClient.execute(RealmsClient.java:536) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar%230!/:?]
+	at TRANSFORMER/minecraft@1.21.10/com.mojang.realmsclient.client.RealmsClient.clientCompatible(RealmsClient.java:316) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar%230!/:?]
+	at TRANSFORMER/minecraft@1.21.10/com.mojang.realmsclient.RealmsAvailability.lambda$check$0(RealmsAvailability.java:49) ~[forge-1.21.10-60.1.0_mapped_official_1.21.10.jar%230!/:?]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Transformer Audit:
+  com.mojang.realmsclient.RealmsAvailability
+    REASON: classloading
+  com.mojang.realmsclient.client.RealmsClient
+    REASON: classloading
+[22:39:00] [Render thread/INFO] [minecraft/Minecraft]: Stopping!
+[22:39:00] [Render thread/DEBUG] [ne.mi.fm.co.ConfigTracker/CONFIG]: Unloading configs type CLIENT
+[22:39:00] [Render thread/DEBUG] [ne.mi.fm.co.ConfigTracker/CONFIG]: Unloading configs type COMMON
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.8/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 29s
+11 actionable tasks: 5 executed, 6 up-to-date
