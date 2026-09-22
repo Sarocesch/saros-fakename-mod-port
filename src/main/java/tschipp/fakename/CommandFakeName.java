@@ -7,71 +7,56 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 
-import net.minecraft.command.argument.EntityArgumentType;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.server.command.CommandManager;
-import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
+import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.commands.Commands;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.network.chat.Component;
+import net.minecraft.ChatFormatting;
 
 import java.util.Collection;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 
-import static net.minecraft.server.command.CommandManager.literal;
-
 public class CommandFakeName {
 
-    public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-        LiteralArgumentBuilder<ServerCommandSource> builder = literal("fakename")
-                .then(
-                        literal("real")
-                                .then(
-                                        CommandManager.argument("fakename", StringArgumentType.string())
-                                                .suggests(CommandFakeName::suggestFakenames)
-                                                .executes(cmd -> handleRealname(cmd.getSource(),
-                                                        StringArgumentType.getString(cmd, "fakename")))))
-                .then(
-                        literal("clear")
-                                .then(
-                                        CommandManager.argument("target", EntityArgumentType.players())
-                                                .requires(src -> src
-                                                        .hasPermissionLevel(Config.getCommandPermissionLevelAll()))
-                                                .executes(cmd -> handleClear(cmd.getSource(),
-                                                        EntityArgumentType.getPlayers(cmd, "target"))))
+    public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
+        LiteralArgumentBuilder<CommandSourceStack> builder = Commands.literal("fakename")
+                .then(Commands.literal("real")
+                        .then(Commands.argument("fakename", StringArgumentType.string())
+                                .suggests(CommandFakeName::suggestFakenames)
+                                .executes(cmd -> handleRealname(cmd.getSource(),
+                                        StringArgumentType.getString(cmd, "fakename")))))
+                .then(Commands.literal("clear")
+                        .then(Commands.argument("target", EntityArgument.players())
+                                .requires(src -> src.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER))
                                 .executes(cmd -> handleClear(cmd.getSource(),
-                                        Collections.singleton(cmd.getSource().getPlayerOrThrow()))))
-                .then(
-                        literal("set")
-                                .then(
-                                        CommandManager.argument("fakename", StringArgumentType.string())
-                                                .executes(cmd -> handleSetname(
-                                                        cmd.getSource(),
-                                                        Collections.singleton(cmd.getSource().getPlayerOrThrow()),
-                                                        StringArgumentType.getString(cmd, "fakename"))))
-                                .then(
-                                        CommandManager.argument("target", EntityArgumentType.players())
-                                                .requires(src -> src
-                                                        .hasPermissionLevel(Config.getCommandPermissionLevelAll()))
-                                                .then(
-                                                        CommandManager.argument("fakename", StringArgumentType.string())
-                                                                .executes(cmd -> handleSetname(
-                                                                        cmd.getSource(),
-                                                                        EntityArgumentType.getPlayers(cmd, "target"),
-                                                                        StringArgumentType.getString(cmd,
-                                                                                "fakename"))))));
+                                        EntityArgument.getPlayers(cmd, "target"))))
+                        .executes(cmd -> handleClear(cmd.getSource(),
+                                Collections.singleton(cmd.getSource().getPlayerOrException()))))
+                .then(Commands.literal("set")
+                        .then(Commands.argument("fakename", StringArgumentType.string())
+                                .executes(cmd -> handleSetname(cmd.getSource(),
+                                        Collections.singleton(cmd.getSource().getPlayerOrException()),
+                                        StringArgumentType.getString(cmd, "fakename"))))
+                        .then(Commands.argument("target", EntityArgument.players())
+                                .requires(src -> src.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER))
+                                .then(Commands.argument("fakename", StringArgumentType.string())
+                                        .executes(cmd -> handleSetname(cmd.getSource(),
+                                                EntityArgument.getPlayers(cmd, "target"),
+                                                StringArgumentType.getString(cmd, "fakename"))))));
 
         dispatcher.register(builder);
     }
 
-    private static CompletableFuture<Suggestions> suggestFakenames(CommandContext<ServerCommandSource> context,
+    private static CompletableFuture<Suggestions> suggestFakenames(CommandContext<CommandSourceStack> context,
             SuggestionsBuilder builder) {
-        ServerCommandSource source = context.getSource();
-        for (ServerPlayerEntity player : source.getServer().getPlayerManager().getPlayerList()) {
-            NbtCompound data = FakeNameData.getData(player);
+        CommandSourceStack source = context.getSource();
+        for (ServerPlayer player : source.getServer().getPlayerList().getPlayers()) {
+            CompoundTag data = FakeNameData.getData(player);
             if (data.contains("fakename")) {
-                String name = Formatting.strip(data.getString("fakename").orElse(""));
+                String name = ChatFormatting.stripFormatting(data.getStringOr("fakename", ""));
                 if (name != null) {
                     name = name.contains(" ") ? ('"' + name + '"') : name;
                     builder.suggest(name);
@@ -81,53 +66,46 @@ public class CommandFakeName {
         return builder.buildFuture();
     }
 
-    private static int handleSetname(ServerCommandSource source, Collection<ServerPlayerEntity> players,
-            String string) {
+    private static int handleSetname(CommandSourceStack source, Collection<ServerPlayer> players, String string) {
         string = string.replace("&", "\u00a7") + "\u00a7r";
-
-        for (ServerPlayerEntity player : players) {
-            NbtCompound tag = FakeNameData.getData(player);
+        for (ServerPlayer player : players) {
+            CompoundTag tag = FakeNameData.getData(player);
             tag.putString("fakename", string);
-            source.sendMessage(Text.literal(player.getName().getString() + "'s name is now " + string));
+            source.sendSystemMessage(Component.literal(player.getName().getString() + "'s name is now " + string));
             FakeName.sendPacket(player, string, 0);
         }
-
         return 1;
     }
 
-    private static int handleClear(ServerCommandSource source, Collection<ServerPlayerEntity> players) {
-        for (ServerPlayerEntity player : players) {
-            NbtCompound tag = FakeNameData.getData(player);
+    private static int handleClear(CommandSourceStack source, Collection<ServerPlayer> players) {
+        for (ServerPlayer player : players) {
+            CompoundTag tag = FakeNameData.getData(player);
             tag.remove("fakename");
-            source.sendMessage(Text.literal(player.getName().getString() + "'s fake name was cleared!"));
+            source.sendSystemMessage(Component.literal(player.getName().getString() + "'s fake name was cleared!"));
             FakeName.sendPacket(player, "", 1);
         }
-
         return 1;
     }
 
-    private static int handleRealname(ServerCommandSource source, String string) {
+    private static int handleRealname(CommandSourceStack source, String string) {
         String copy = string;
         string = string.replace("&", "\u00a7") + "\u00a7r";
-        string = Formatting.strip(string);
+        string = ChatFormatting.stripFormatting(string);
 
         boolean found = false;
-        for (ServerPlayerEntity player : source.getServer().getPlayerManager().getPlayerList()) {
-            NbtCompound data = FakeNameData.getData(player);
+        for (ServerPlayer player : source.getServer().getPlayerList().getPlayers()) {
+            CompoundTag data = FakeNameData.getData(player);
             if (data.contains("fakename")) {
-                String fn = Formatting.strip(data.getString("fakename").orElse(""));
+                String fn = ChatFormatting.stripFormatting(data.getStringOr("fakename", ""));
                 if (fn != null && fn.equalsIgnoreCase(string)) {
-                    source.sendMessage(Text.literal(copy + "'s real name is " + player.getGameProfile().name()));
+                    source.sendSystemMessage(Component.literal(copy + "'s real name is " + player.getGameProfile().name()));
                     found = true;
                 }
             }
         }
 
-        if (found) {
-            return 1;
-        }
-
-        source.sendError(Text.literal("No player with that name was found!"));
+        if (found) return 1;
+        source.sendFailure(Component.literal("No player with that name was found!"));
         return 0;
     }
 }

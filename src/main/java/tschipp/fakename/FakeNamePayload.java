@@ -1,28 +1,24 @@
 package tschipp.fakename;
 
-import net.minecraft.network.RegistryByteBuf;
-import net.minecraft.network.codec.PacketCodec;
-import net.minecraft.network.codec.PacketCodecs;
-import net.minecraft.network.packet.CustomPayload;
-import net.minecraft.util.Identifier;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.resources.Identifier;
 
-/**
- * CustomPayload record for syncing fakename data between server and clients.
- * Uses the new Fabric 1.21+ networking API pattern.
- */
-public record FakeNamePayload(String fakename, int entityId, int operation) implements CustomPayload {
+public record FakeNamePayload(String fakename, int entityId, int operation) implements CustomPacketPayload {
 
-    public static final CustomPayload.Id<FakeNamePayload> ID = new CustomPayload.Id<>(
-            Identifier.of(FakeName.MODID, "fakename_sync"));
+    public static final CustomPacketPayload.Type<FakeNamePayload> TYPE = new CustomPacketPayload.Type<>(
+            Identifier.fromNamespaceAndPath(FakeName.MODID, "fakename_sync"));
 
-    public static final PacketCodec<RegistryByteBuf, FakeNamePayload> CODEC = PacketCodec.tuple(
-            PacketCodecs.STRING, FakeNamePayload::fakename,
-            PacketCodecs.INTEGER, FakeNamePayload::entityId,
-            PacketCodecs.INTEGER, FakeNamePayload::operation,
+    public static final StreamCodec<RegistryFriendlyByteBuf, FakeNamePayload> CODEC = StreamCodec.composite(
+            ByteBufCodecs.STRING_UTF8, FakeNamePayload::fakename,
+            ByteBufCodecs.INT, FakeNamePayload::entityId,
+            ByteBufCodecs.INT, FakeNamePayload::operation,
             FakeNamePayload::new);
 
     @Override
-    public Id<? extends CustomPayload> getId() {
-        return ID;
+    public Type<? extends CustomPacketPayload> type() {
+        return TYPE;
     }
 }
