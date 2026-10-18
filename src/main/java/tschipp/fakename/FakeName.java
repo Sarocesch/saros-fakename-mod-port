@@ -22,7 +22,7 @@ public class FakeName {
     public static final Logger LOGGER = LogManager.getLogger(MODID);
 
     public FakeName(ModContainer modContainer) {
-        modContainer.registerConfig(ModConfig.Type.SERVER, Config.SERVER_SPEC);
+        modContainer.registerConfig(ModConfig.Type.SYNCED, Config.SERVER_SPEC);
 
         IEventBus modBus = modContainer.getEventBus();
         modBus.addListener(this::onRegisterPayloads);
